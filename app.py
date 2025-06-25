@@ -2,13 +2,28 @@
 エンジニア・研究者ダイレクトリクルーティングMVPのメインアプリケーション
 Streamlitを使用したWebインターフェースを提供します
 """
+import os
 import streamlit as st
 import pandas as pd
+from datetime import datetime
 from src.core.recruitment_service import RecruitmentService
 from src.nlp_processing.matcher import match_requirements
+from src.utils.common import setup_logger
 import config
 
+# メインロガーを設定
+logger = setup_logger('app')
+
 def main():
+    # アプリケーション起動時にログを記録
+    logger.info(f"アプリケーション {config.APP_TITLE} を起動しました")
+    logger.debug(f"設定情報: LOG_DIR={config.LOG_DIR}, LOG_LEVEL={config.LOG_LEVEL}")
+
+    # 環境とシステム情報をログに記録
+    import platform
+    import sys
+    logger.info(f"実行環境: Python {sys.version}, OS: {platform.platform()}")
+
     st.set_page_config(
         page_title=config.APP_TITLE,
         page_icon="🔍",
@@ -216,5 +231,53 @@ def main():
             if "collected_count" in st.session_state and st.session_state.collected_count > 0:
                 st.metric("収集済み候補者数", st.session_state.collected_count)
 
+def log_system_info():
+    """システム情報をログに記録する"""
+    import platform
+    import sys
+    import psutil
+
+    try:
+        mem = psutil.virtual_memory()
+        disk = psutil.disk_usage('/')
+
+        logger.info(f"システム情報:")
+        logger.info(f"  - OS: {platform.platform()}")
+        logger.info(f"  - Python: {sys.version}")
+        logger.info(f"  - メモリ使用量: {mem.percent}% ({mem.used / (1024**3):.2f}GB/{mem.total / (1024**3):.2f}GB)")
+        logger.info(f"  - ディスク使用量: {disk.percent}% ({disk.used / (1024**3):.2f}GB/{disk.total / (1024**3):.2f}GB)")
+    except Exception as e:
+        logger.warning(f"システム情報の取得に失敗しました: {e}")
+
 if __name__ == "__main__":
-    main()
+    start_time = datetime.now()
+    try:
+        # ログディレクトリの確認
+        if not os.path.exists(config.LOG_DIR):
+            os.makedirs(config.LOG_DIR)
+            logger.info(f"ログディレクトリを作成しました: {config.LOG_DIR}")
+
+        # システム情報をログに記録
+        try:
+            log_system_info()
+        except ImportError:
+            logger.warning("psutilがインストールされていないため、詳細なシステム情報を記録できません。")
+            logger.warning("pip install psutilを実行してインストールすることを推奨します。")
+
+        logger.info("----------- アプリケーション起動 -----------")
+        main()
+    except Exception as e:
+        logger.error(f"アプリケーションで予期せぬエラーが発生しました: {e}", exc_info=True)
+        # エラー情報をユーザーに表示（Streamlitが起動している場合）
+        import traceback
+        error_msg = f"エラーが発生しました: {str(e)}\n{traceback.format_exc()}"
+        try:
+            st.error(error_msg)
+        except:
+            pass  # Streamlitコンテキスト外の場合
+        raise
+    finally:
+        end_time = datetime.now()
+        duration = (end_time - start_time).total_seconds()
+        logger.info(f"アプリケーション終了 - 実行時間: {duration:.2f}秒")
+        logger.info("----------------------------------------")

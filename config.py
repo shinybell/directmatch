@@ -38,3 +38,9 @@ APP_DESCRIPTION = "Web上の公開情報からエンジニアおよび研究者�
 # ロギング設定
 LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
 LOG_FORMAT = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+LOG_FILE_FORMAT = "%(asctime)s - %(name)s - %(levelname)s - %(filename)s:%(lineno)d - %(message)s"
+LOG_DIR = os.path.join(ROOT_DIR, "logs")
+LOG_TO_FILE = True  # ファイルへのログ出力を有効化
+LOG_MAX_SIZE = 10 * 1024 * 1024  # 10MB
+LOG_BACKUP_COUNT = 5  # 保持するバックアップファイル数
+LOG_ERRORS_SEPARATELY = True  # エラーログを別ファイルに出力

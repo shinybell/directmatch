@@ -73,6 +73,40 @@ streamlit run app.py
 
 ブラウザで自動的に`http://localhost:8501`が開き、アプリケーションにアクセスできます。
 
+### ログ機能
+
+本アプリケーションには包括的なログ機能が実装されています：
+
+- **ログ出力先**: コンソール出力とファイル出力（`logs/`ディレクトリ）
+- **ログレベル**: DEBUG、INFO、WARNING、ERROR、CRITICAL
+- **ログ形式**: タイムスタンプ、ロガー名、ログレベル、ファイル名、行番号、メッセージ
+- **ログファイル**: 日付別とロガー名でファイルを分割
+- **エラーログ**: ERROR レベル以上のログは別ファイルにも記録
+- **ログローテーション**: 最大サイズに達したらローテーションし、古いログを自動的にアーカイブ
+
+ログレベルは`.env`ファイルで設定できます：
+
+```
+LOG_LEVEL=INFO  # DEBUG, INFO, WARNING, ERROR, CRITICALのいずれか
+```
+
+ログファイルは以下のディレクトリに保存されます：
+
+```
+logs/YYYY-MM-DD_[ロガー名].log      # 一般ログ
+logs/YYYY-MM-DD_[ロガー名]_error.log # エラーログ
+```
+
+#### ログ機能テスト
+
+ログ機能を手動でテストするには、付属のテストスクリプトを実行します：
+
+```bash
+python test_logging.py
+```
+
+これにより、各ログレベルのサンプルメッセージが出力され、ログファイルが正しく生成されるか確認できます。
+
 ## プロジェクト構成
 
 ```
@@ -83,6 +117,9 @@ project_root/
 ├── .env                        # 環境変数（APIキーなどの機密情報）
 ├── data/                       # データ保存用ディレクトリ
 │   └── recruiting_mvp.db       # SQLiteデータベースファイル
+├── logs/                       # アプリケーションログ保存用ディレクトリ
+│   ├── YYYY-MM-DD_app.log     # 日付別の一般ログファイル
+│   └── YYYY-MM-DD_app_error.log # 日付別のエラーログファイル
 └── src/                        # アプリケーションのコアロジックを格納
     ├── data_collection/        # 外部APIとの連携、データ取得ロジック
     │   ├── github_client.py    # GitHub APIクライアント
@@ -101,7 +138,7 @@ project_root/
     ├── core/                   # アプリケーションの主要ビジネスロジック
     │   └── recruitment_service.py # データ収集、NLP処理、データベース操作を連携させ、採用活動の主要ロジックを実装
     └── utils/                  # 汎用的なユーティリティ関数
-        └── common.py           # ID生成、エラーハンドリングなど、共通で利用する関数
+        └── common.py           # ログ設定、ID生成、エラーハンドリングなど、共通で利用する関数
 ```
 
 ## 使用技術
@@ -112,6 +149,7 @@ project_root/
 - **ORM**: SQLAlchemy
 - **データ処理**: pandas, numpy
 - **NLP**: scikit-learn (TF-IDF, Cosine Similarity), nltk / MeCab (日本語前処理)
+- **ログ管理**: Python 標準ライブラリの logging モジュール
 
 ## 注意事項
 
