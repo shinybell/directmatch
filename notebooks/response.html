@@ -1,0 +1,2136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <!-- meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <meta http-equiv="Cache-Control" content="must-revalidate" />
+    <meta http-equiv="Expires" content="0" />
+
+    <meta name="ROBOTS" content="NONE" />
+    <meta name="ROBOTS" content="NOINDEX,NOFOLLOW" />
+    <meta name="ROBOTS" content="NOARCHIVE" />
+
+    <link rel="shortcut icon" href="/static/images/favicon_kakenhi.ico" type="image/vnd.microsoft.ico" />
+    <link rel="icon" href="/static/images/favicon_kakenhi.ico" type="image/vnd.microsoft.ico" />
+    <!-- Bootstrap core CSS -->
+    <link id="switch_style" href="/static/css/bootstrap-modal.css?1691548633" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="/static/css/chosentree.css?1697515897" rel="stylesheet" />
+	<link href="/static/css/treeselect.css?1697515897" rel="stylesheet" />
+    <link href="/static/css/cinii.css?1735186047" rel="stylesheet" />
+    <link href="/static/css/dropzone.css?1691548633" rel="stylesheet" />
+    <link href="/static/css/font-awesome.css?1691548633" rel="stylesheet" />
+    <link href="/static/css/jquery-ui.min.css?1691548633" rel="stylesheet" />
+    <link href="/static/css/box-flex.css?1691548633" rel="stylesheet" />
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="/static/js/html5shiv.js?1691548633"></script>
+    <script type="text/javascript" src="/static/js/respond.min.js?1691548634"></script>
+    <![endif]-->
+    <script nonce="UmqelrVo1EH9Wpt8lOoHoA==" type="text/javascript">
+    //<![CDATA[
+    var static_url="/static/";
+    var fault_mode="False";
+    //]]>
+
+    if(navigator.userAgent.match(/(iPad)/)){
+        document.write('<meta name="viewport" content="width=980">');
+    }
+    else{
+        document.write('<meta name="viewport" content="width=device-width">');
+    }
+   </script>
+    <script type="text/javascript" src="/static/js/jquery.min.js?1691548633"></script>
+    <script type="text/javascript" src="/static/js/common.js?1691548633"></script>
+
+    <!-- <script type="text/javascript" src="/static/js/changeDisplayMode.js?1691548633"></script>
+ -->
+    <script type="text/javascript" src="/static/js/jquery-ui.min.js?1691548633"></script>
+    <script type="text/javascript" src="/static/js/search.js?1728349713"></script>
+    <!--[if IE 8.0]>
+      <link href="/static/css/cinii-ie8.css?1691548633" rel="stylesheet" type="text/css" />
+    <![endif]-->
+  <title>KAKEN &mdash; 研究者をさがす | ディープラーニング</title>
+  </head>
+  <body class="kakenhi grants topscreen with_sidenavi ja">
+
+
+<div id="content">
+  <form id="search" method="post" action="." autoclass="form-signin" class="form-vertical"><input type='hidden' name='csrfmiddlewaretoken' value='Gj7PCVVp9oUCyCwjuJywkT9FVXiAHUjkDfyyYnRUtyYrEolso94l0fryKiGTrJnR' />
+  <input type="hidden" name="lang" id="lang" value="ja" />
+  <input type="hidden" name="url_lang" id="url_lang" value="" />
+    <nav class="navbar navbar-header">
+      <div class="navbar-topcontent">
+        <!--ブランド名 ロゴ名の表示-->
+        <a href="/index/" class="navbar-brand headerlogo"></a>
+        <!--トグルボタンの設置-->
+        <button class="navbar-toggler button-menu collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="メニュー">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <button type="button" class="navbar-toggler button-search collapsed" data-bs-toggle="collapse" data-bs-target="#searchbox">
+          検索
+        </button>
+        <div id="nav-content" class="collapse navbar-collapse headermenu">
+        <ul class="nav navbar-nav menu-service-list btn-group">
+        　<li><a href="/index/">研究課題をさがす</a></li>
+          <li class="active"><a href="/index/">研究者をさがす</a></li>
+          </ul>
+          <ul class="nav navbar-nav menu-kaken-use-list btn-group">
+            <li><a href="/" target="_blank">KAKENの使い方</a></li>
+          </ul>
+          <ul class="nav navbar-nav menu-utility-list btn-group">
+
+                <li class="menu-utility-item">
+                  <select class="form-control" name="langChange" id="langChange">
+
+                    <option value="ja" selected="selected">日本語</option>
+
+                    <option value="en">英語</option>
+
+                  </select>
+                </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+<div class="container body-wrap">
+
+<div id="searchbox" class="searchbox lower-page">
+  <div class="kakenhi_search">
+    <div class="searchformcontents container-fluid">
+      <div class="searchboxheader col-xs-12 col-sm-3">
+        <div class="col-xs-12 col-sm-12">
+        </div>
+      </div>
+      <div class="form-tabcontent form-kakenhi col-xs-12 col-sm-9">
+        <div class="col-xs-12 col-sm-6">
+          <div class="row row-textform">
+            <div class="col-xs-9 col-sm-9 col-form">
+              <input id="text_kywd_0" name="kw" type="text" class="main_srchterm searchforminput input_simple" placeholder="フリーワード" value="ディープラーニング" />
+            </div>
+            <div class="col-xs-3 col-sm-3">
+              <input type="button" class="btn searchbtn" id="search_simple" value="検索" />
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 fulltext-area">
+          <div class="col-sm-11 col-sm-offset-1">
+
+              <a class="link-page underline link_pointer" id="searchAdvanced"><i class="fa fa-chevron-right"></i> 詳細検索</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div id="results">
+    <div id="result-wrapper">
+      <div class="container">
+
+          <p><a class="collapse-facet-toggle collapsed" data-bs-toggle="collapse" href="#collapse-facet">絞り込み条件</a></p>
+          <div id="collapse-facet" class="panel-collapse collapse">
+            <div id="facet-wrapper">
+              <div class="facet">
+              <div class="sidebar">
+<div class="facet-title hidden-xs"><i class="fa fa-filter"></i> 絞り込み</div>
+
+
+<div class="panel-default" id="facet_im">
+  <h3>研究期間</h3>
+  <div class="panel-body award-year">
+    <div id="chart_im"></div>
+    <div id="slider-wrap_im">
+      <div id="slider_im"></div>
+      <div class="form-inline">
+        <div class="form-group"><input type="text" id="startYear_im" class="form-control" maxlength="4"></div> - <div class="form-group"><input type="text" id="endYear_im" class="form-control" maxlength="4"></div>
+        <div class="form-group">
+          <input type="button" class="btn btn-sm btn-default update year_search" id="year_search_im" value="&#xf021;" />
+          <input type="button" class="btn btn-sm btn-default clear year_clear" id="year_clear_im" value="クリア" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel-default" id="facet_py">
+  <h3>成果物の出版年</h3>
+  <div class="panel-body award-year">
+    <div id="chart_py"></div>
+    <div id="slider-wrap_py">
+      <div id="slider_py"></div>
+      <div class="form-inline">
+        <div class="form-group"><input type="text" id="startYear_py" class="form-control" maxlength="4"></div> - <div class="form-group"><input type="text" id="endYear_py" class="form-control" maxlength="4"></div>
+        <div class="form-group">
+          <input type="button" class="btn btn-sm btn-default update year_search" id="year_search_py" value="&#xf021;" />
+          <input type="button" class="btn btn-sm btn-default clear year_clear" id="year_clear_py" value="クリア" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+ <div class="panel panel-default" id="facet_in"></div><!-- panel panel-default -->
+ <script nonce="UmqelrVo1EH9Wpt8lOoHoA==" type="text/javascript">
+  get_facet_data('in');
+ </script>
+
+
+
+ <div class="panel panel-default" id="facet_dp"></div><!-- panel panel-default -->
+ <script nonce="UmqelrVo1EH9Wpt8lOoHoA==" type="text/javascript">
+  get_facet_data('dp');
+ </script>
+
+
+
+ <div class="panel panel-default" id="facet_jb"></div><!-- panel panel-default -->
+ <script nonce="UmqelrVo1EH9Wpt8lOoHoA==" type="text/javascript">
+  get_facet_data('jb');
+ </script>
+
+
+
+ <div class="panel panel-default" id="facet_kw"></div><!-- panel panel-default -->
+ <script nonce="UmqelrVo1EH9Wpt8lOoHoA==" type="text/javascript">
+  get_facet_data('kw');
+ </script>
+
+
+
+ <div class="panel panel-default" id="facet_pj"></div><!-- panel panel-default -->
+ <script nonce="UmqelrVo1EH9Wpt8lOoHoA==" type="text/javascript">
+  get_facet_data('pj');
+ </script>
+
+
+
+ <div class="panel panel-default" id="facet_pr"></div><!-- panel panel-default -->
+ <script nonce="UmqelrVo1EH9Wpt8lOoHoA==" type="text/javascript">
+  get_facet_data('pr');
+ </script>
+
+
+<script type="text/javascript" src="/static/js/d3.min.js?1691548633"></script>
+<script nonce="UmqelrVo1EH9Wpt8lOoHoA==" type="text/javascript">
+
+var margin_im = {top: 10, right: 5, bottom: 0, left: 5},
+    width_im = 255 - margin_im.left - margin_im.right,
+    height_im = 80 - margin_im.top - margin_im.bottom;
+
+var bisectYear_im = d3.bisector(function(d) { return d.year; }).left;
+
+var x_im = d3.scale.linear()
+    .range([0, width_im]);
+
+var y_im = d3.scale.linear()
+    .range([height_im, 0]);
+
+var xAxis_im = d3.svg.axis()
+    .scale(x_im)
+    .orient("bottom");
+
+var yAxis_im = d3.svg.axis()
+    .scale(y_im)
+    .orient("left");
+
+var line_im = d3.svg.line()
+    .x(function(d) { return x_im(d.year); })
+    .y(function(d) { return y_im(d.value); });
+
+var area_im = d3.svg.area()
+    .x(function(d) { return x_im(d.year); })
+    .y0(height_im)
+    .y1(function(d) { return y_im(d.value); });
+
+var tooltip_im = d3.select("#chart_im").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 1e-6);
+
+var svg_im = d3.select("#chart_im").append("svg")
+    .attr("width", width_im + margin_im.left + margin_im.right)
+    .attr("height", height_im + margin_im.top + margin_im.bottom)
+    .append("g")
+    .attr("transform", "translate(" + margin_im.left + "," + margin_im.top + ")");
+
+var cur_url_im = location.pathname;
+if (cur_url_im.indexOf("/search") > -1) {
+    cur_url_im = cur_url_im.replace(/\/search/, "/year/im");
+    if (cur_url_im.slice(-1) != "/") {
+	    cur_url_im += "/";
+	}
+    cur_url_im += location.search;
+}
+if (cur_url_im.indexOf("/") < 0) {
+    cur_url_im = "/" + cur_url_im;
+}
+
+d3.json(cur_url_im, function(error, data) {
+	if (data == "-1") {
+		$("#facet_im").addClass("hide");
+		return false;
+	}
+    data.forEach(function(d) {
+      d.year = d.year;
+      d.value = +d.value;
+    });
+
+    data.sort(function(a, b) {
+      return a.year - b.year;
+    });
+
+    x_im.domain([data[0].year, data[data.length - 1].year]);
+    y_im.domain([0, d3.max(data, function(d) { return d.value; })]);
+
+
+    var clip = svg_im.append("defs").append("svg:clipPath")
+        .attr("id", "clip")
+        .append("svg:rect")
+        .attr("id", "clip-rect")
+        .attr("x", "0")
+        .attr("y", "0")
+        .attr("width", width_im)
+        .attr("height", height_im);
+
+
+    svg_im.append("path")
+        .datum(data)
+        .attr("class", "line")
+        .attr("clip-path", "url(#clip)")
+        .attr("d", line_im);
+
+    svg_im.append("path")
+        .datum(data)
+        .attr("class", "area")
+        .attr("clip-path", "url(#clip)")
+        .attr("d", area_im);
+
+    var focus_im = svg_im.append("g")
+        .attr("class", "focus")
+        .style("display", "none");
+
+    focus_im.append("circle")
+        .attr("r", 4.5);
+
+    svg_im.append("rect")
+        .attr("class", "overlay")
+        .attr("width", width_im)
+        .attr("height", height_im)
+        .on("mouseover", function() {
+          focus_im.style("display", null);
+          tooltip_im.transition()
+          .duration(500)
+          .style("opacity", 1);
+        })
+        .on("mouseout", function() {
+          focus_im.style("display", "none");
+          tooltip_im.transition()
+          .duration(500)
+          .style("opacity", 1e-6);
+        })
+        .on("mousemove", mousemove_im);
+
+    function mousemove_im() {
+      var x0 = x_im.invert(d3.mouse(this)[0]),
+          i = bisectYear_im(data, x0, 1);
+
+      var d0, d1, d_im;
+      d0 = data[i - 1];
+      if (data.length > i) {
+        d1 = data[i];
+        d_im = x0 - d0.year > d1.year - x0 ? d1 : d0;
+      } else {
+      	d_im = d0;
+      }
+      focus_im.attr("transform", "translate(" + x_im(d_im.year) + "," + y_im(d_im.value) + ")");
+
+      tooltip_im.text(d_im.year + "(" + d_im.value + ")")
+      .style("left", x_im(d_im.year) + "px")
+      .style("top", y_im(d_im.value) - 25 + "px");
+    }
+});
+
+var margin_py = {top: 10, right: 5, bottom: 0, left: 5},
+    width_py = 255 - margin_py.left - margin_py.right,
+    height_py = 80 - margin_py.top - margin_py.bottom;
+
+var bisectYear_py = d3.bisector(function(d) { return d.year; }).left;
+
+var x_py = d3.scale.linear()
+    .range([0, width_py]);
+
+var y_py = d3.scale.linear()
+    .range([height_py, 0]);
+
+var xAxis_py = d3.svg.axis()
+    .scale(x_py)
+    .orient("bottom");
+
+var yAxis_py = d3.svg.axis()
+    .scale(y_py)
+    .orient("left");
+
+var line_py = d3.svg.line()
+    .x(function(d) { return x_py(d.year); })
+    .y(function(d) { return y_py(d.value); });
+
+var area_py = d3.svg.area()
+    .x(function(d) { return x_py(d.year); })
+    .y0(height_py)
+    .y1(function(d) { return y_py(d.value); });
+
+var tooltip_py = d3.select("#chart_py").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 1e-6);
+
+var svg_py = d3.select("#chart_py").append("svg")
+    .attr("width", width_py + margin_py.left + margin_py.right)
+    .attr("height", height_py + margin_py.top + margin_py.bottom)
+    .append("g")
+    .attr("transform", "translate(" + margin_py.left + "," + margin_py.top + ")");
+
+var cur_url_py = location.pathname;
+if (cur_url_py.indexOf("/search") > -1) {
+    cur_url_py = cur_url_py.replace(/\/search/, "/year/py");
+    if (cur_url_py.slice(-1) != "/") {
+	    cur_url_py += "/";
+	}
+    cur_url_py += location.search;
+}
+if (cur_url_py.indexOf("/") < 0) {
+    cur_url_py = "/" + cur_url_py;
+}
+
+d3.json(cur_url_py, function(error, data) {
+	if (data == "-1") {
+		$("#facet_py").addClass("hide");
+		return false;
+	}
+    data.forEach(function(d) {
+      d.year = d.year;
+      d.value = +d.value;
+    });
+
+    data.sort(function(a, b) {
+      return a.year - b.year;
+    });
+
+    x_py.domain([data[0].year, data[data.length - 1].year]);
+    y_py.domain([0, d3.max(data, function(d) { return d.value; })]);
+
+
+    var clip = svg_py.append("defs").append("svg:clipPath")
+        .attr("id", "clip")
+        .append("svg:rect")
+        .attr("id", "clip-rect")
+        .attr("x", "0")
+        .attr("y", "0")
+        .attr("width", width_py)
+        .attr("height", height_py);
+
+
+    svg_py.append("path")
+        .datum(data)
+        .attr("class", "line")
+        .attr("clip-path", "url(#clip)")
+        .attr("d", line_py);
+
+    svg_py.append("path")
+        .datum(data)
+        .attr("class", "area")
+        .attr("clip-path", "url(#clip)")
+        .attr("d", area_py);
+
+    var focus_py = svg_py.append("g")
+        .attr("class", "focus")
+        .style("display", "none");
+
+    focus_py.append("circle")
+        .attr("r", 4.5);
+
+    svg_py.append("rect")
+        .attr("class", "overlay")
+        .attr("width", width_py)
+        .attr("height", height_py)
+        .on("mouseover", function() {
+          focus_py.style("display", null);
+          tooltip_py.transition()
+          .duration(500)
+          .style("opacity", 1);
+        })
+        .on("mouseout", function() {
+          focus_py.style("display", "none");
+          tooltip_py.transition()
+          .duration(500)
+          .style("opacity", 1e-6);
+        })
+        .on("mousemove", mousemove_py);
+
+    function mousemove_py() {
+      var x0 = x_py.invert(d3.mouse(this)[0]),
+          i = bisectYear_py(data, x0, 1);
+
+      var d0, d1, d_py;
+      d0 = data[i - 1];
+      if (data.length > i) {
+        d1 = data[i];
+        d_py = x0 - d0.year > d1.year - x0 ? d1 : d0;
+      } else {
+      	d_py = d0;
+      }
+      focus_py.attr("transform", "translate(" + x_py(d_py.year) + "," + y_py(d_py.value) + ")");
+
+      tooltip_py.text(d_py.year + "(" + d_py.value + ")")
+      .style("left", x_py(d_py.year) + "px")
+      .style("top", y_py(d_py.value) - 25 + "px");
+    }
+});
+
+// slider
+$(function() {
+
+  $.getJSON(cur_url_im,function(data){
+
+    var startYear = Number(data[0].year),
+        endYear = Number(data[data.length-1].year);
+
+    $("#startYear_im").val(startYear);
+    $("#endYear_im").val(endYear);
+
+    $( "#slider_im" ).slider({
+      range: true,
+      min: startYear,
+      max: endYear,
+      values: [startYear,endYear],
+      slide: function( event, ui ) {
+
+        var maxv = d3.min([ui.values[1], data.length]);
+        var minv = d3.max([ui.values[0], 0]);
+
+        x_im.domain([ui.values[0], ui.values[1]]);
+
+        svg_im.transition().duration(750)
+        .select(".area").attr("d", area_im);
+
+        svg_im.transition().duration(750)
+        .select(".focus").attr("d", line_im(data));
+
+        svg_im.transition().duration(750)
+        .select(".line").attr("d", line_im(data));
+
+        // facet search
+        search_im(ui.values[0],ui.values[1]);
+
+      }
+    });
+  });
+
+  $.getJSON(cur_url_py,function(data){
+
+    var startYear = Number(data[0].year),
+        endYear = Number(data[data.length-1].year);
+
+    $("#startYear_py").val(startYear);
+    $("#endYear_py").val(endYear);
+
+    $( "#slider_py" ).slider({
+      range: true,
+      min: startYear,
+      max: endYear,
+      values: [startYear,endYear],
+      slide: function( event, ui ) {
+
+        var maxv = d3.min([ui.values[1], data.length]);
+        var minv = d3.max([ui.values[0], 0]);
+
+        x_py.domain([ui.values[0], ui.values[1]]);
+
+        svg_py.transition().duration(750)
+        .select(".area").attr("d", area_py);
+
+        svg_py.transition().duration(750)
+        .select(".focus").attr("d", line_py(data));
+
+        svg_py.transition().duration(750)
+        .select(".line").attr("d", line_py(data));
+
+        // facet search
+        search_py(ui.values[0],ui.values[1]);
+
+      }
+    });
+  });
+
+});
+
+function search_im(start,end){
+  $("#startYear_im").val(start);
+  $("#endYear_im").val(end);
+}
+
+function search_py(start,end){
+  $("#startYear_py").val(start);
+  $("#endYear_py").val(end);
+}
+
+</script>
+</div><!-- .sidebar -->
+              </div><!-- .facet -->
+            </div><!-- #facet-wrapper -->
+          </div>
+
+          <div id="result-list">
+            <div class="listings">
+              <div class="block-info clearfix">
+                <p class="search-term-selected">検索結果:&nbsp;1,002件 / ディープラーニング</p>
+                <div class="pagenumber">
+
+                  <div class="paging paging-top">
+                     <ul class="paginglist">
+
+
+
+                          <li class="pagingitem"><span class="btn pagingbtn currentpage">1</span></li>
+
+
+
+
+
+                          <li class="pagingitem hidden-xs"><a class="btn pagingbtn" id="pagingbtn_topnum_21"><span class="short_normal">2</span></a></li>
+
+
+
+
+
+                          <li class="pagingitem hidden-xs"><a class="btn pagingbtn" id="pagingbtn_topnum_41"><span class="short_normal">3</span></a></li>
+
+
+
+
+
+                          <li class="pagingitem hidden-xs"><a class="btn pagingbtn" id="pagingbtn_topnum_61"><span class="short_normal">4</span></a></li>
+
+
+
+
+
+                          <li class="pagingitem hidden-xs"><a class="btn pagingbtn" id="pagingbtn_topnum_81"><span class="short_normal">5</span></a></li>
+
+
+
+
+
+                          <li class="pagingitem hidden-xs"><a class="btn pagingbtn" id="pagingbtn_topnum_101"><span class="short_normal">6</span></a></li>
+
+
+
+
+
+                          <li class="pagingitem hidden-xs"><a class="btn pagingbtn" id="pagingbtn_topnum_121"><span class="short_normal">7</span></a></li>
+
+
+
+
+
+                          <li class="pagingitem hidden-xs"><a class="btn pagingbtn" id="pagingbtn_topnum_141"><span class="short_normal">8</span></a></li>
+
+
+
+
+
+                          <li class="pagingitem hidden-xs"><a class="btn pagingbtn" id="pagingbtn_topnum_161"><span class="short_normal">9</span></a></li>
+
+
+
+
+
+                          <li class="pagingitem hidden-xs"><a class="btn pagingbtn" id="pagingbtn_topnum_181"><span class="short_normal">10</span></a></li>
+
+
+
+
+                        <li class="pagingitem"><a class="btn pagingbtn" id="pagingbtn_topal_21""><span aria-hidden="true">
+
+                        &rsaquo;</span><span class="sr-only">Next
+
+                        </span></a></li>
+
+
+
+                        <li class="pagingitem"><a class="btn pagingbtn" id="pagingbtn_topal_981""><span aria-hidden="true">
+
+                        &raquo;</span><span class="sr-only">End
+
+                        </span></a></li>
+
+
+                    </ul>
+                  </div><!-- .paging paging-top -->
+
+                </div><!-- .pagenumber -->
+
+                <div class="pull-left pagenumber">
+                  <input type="checkbox" id="chk_group" class="checkAll">
+
+                    <select class="form-control choice_type" name="ct" id="ct">
+
+                      <option value="all" selected="selected">すべて選択</option>
+
+                      <option value="page">ページ内選択</option>
+
+                    </select>
+
+
+                  <select class="form-control output_type" name="ot" id="ot">
+
+                    <option value="json">JSONで出力</option>
+
+                    <option value="csv">テキスト(CSV)で出力</option>
+
+                  </select>
+
+                  <input type="button" class="btn file_btn" id="file_btn" value="実行" />
+                  <input type="hidden" id="is_over" value="0" />
+                  <input type="hidden" id="max_file_msg" value="" />
+                </div><!-- .pull-left .pagenumber -->
+
+                <div class="pull-left pageinfo">
+
+                  <strong>表示件数:&nbsp;</strong>
+                    <select class="form-control" name="rw" id="rw">
+
+                      <option value="20" selected="selected">20</option>
+
+                      <option value="50">50</option>
+
+                      <option value="100">100</option>
+
+                      <option value="200">200</option>
+
+                      <option value="500">500</option>
+
+                    </select>
+
+                </div>
+                <div class="pull-right">
+
+                  <select class="form-control" name="od" id="od">
+
+                        <option value="1">適合度</option>
+
+                        <option value="2">カナ: 昇順</option>
+
+                        <option value="3">カナ: 降順</option>
+
+                        <option value="4">アルファベット: 昇順</option>
+
+                        <option value="5">アルファベット: 降順</option>
+
+                        <option value="6">研究課題数: 昇順</option>
+
+                        <option value="7" selected="selected">研究課題数: 降順</option>
+
+                  </select>
+
+                </div>
+              </div><!-- block-info clearfix -->
+
+              <div class="listContainer">
+                <ul>
+
+
+                  <li>
+                    <div class="listitem xfolkentry">
+                      <h3 class="item_mainTitle">
+                        <div class="title">
+                        <input type="checkbox" class="chk_group" name="chk[]" id="chk_70213486" value="70213486" />
+                        <span class="row-number"> 1. </span><i class="fa fa-user"></i> <a class="link-page" href="/nrid/1000070213486/">梅澤 明弘<span class="subTitle">&nbsp;&nbsp;UMEZAWA Akihiro&nbsp;&nbsp;(70213486)</span></a>
+                          </div>
+                      </h3>
+
+                      <table class="summary-table">
+
+                      <tr>
+                       <th>所属 (現在)</th>
+                       <td>
+
+                       国立研究開発法人国立成育医療研究センター,&nbsp;研究所,&nbsp;研究所長
+                       <br>
+                       国立研究開発法人国立成育医療研究センター,&nbsp;病理診断部,&nbsp;医員
+                       <br>
+                       国立研究開発法人国立成育医療研究センター,&nbsp;細胞医療研究部,&nbsp;部長
+
+                       </td>
+                      </tr>
+
+
+                        <tr>
+                          <th>審査区分/研究分野</th>
+                          <td>
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%94%9F%E7%89%A9%E7%B3%BB/%E5%8C%BB%E6%AD%AF%E8%96%AC%E5%AD%A6/%E5%9F%BA%E7%A4%8E%E5%8C%BB%E5%AD%A6/%E4%BA%BA%E4%BD%93%E7%97%85%E7%90%86%E5%AD%A6" class="link-page underline">人体病理学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%94%9F%E7%89%A9%E7%B3%BB/%E5%8C%BB%E6%AD%AF%E8%96%AC%E5%AD%A6/%E5%86%85%E7%A7%91%E7%B3%BB%E8%87%A8%E5%BA%8A%E5%8C%BB%E5%AD%A6/%E5%B0%8F%E5%85%90%E7%A7%91%E5%AD%A6" class="link-page underline">小児科学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E5%8C%BB%E5%AD%A6/%E7%97%85%E7%90%86/%E5%AE%9F%E9%A8%93%E7%97%85%E7%90%86%E5%AD%A6" class="link-page underline">実験病理学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E5%8C%BB%E5%AD%A6/%E7%97%85%E7%90%86/%E4%BA%BA%E4%BD%93%E7%97%85%E7%90%86%E5%AD%A6" class="link-page underline">人体病理学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%94%9F%E7%89%A9%E7%B3%BB/%E5%8C%BB%E6%AD%AF%E8%96%AC%E5%AD%A6/%E5%A4%96%E7%A7%91%E7%B3%BB%E8%87%A8%E5%BA%8A%E5%8C%BB%E5%AD%A6/%E7%9C%BC%E7%A7%91%E5%AD%A6" class="link-page underline">眼科学</a>
+                          </td>
+                        </tr>
+
+
+                        <tr>
+                          <th>キーワード</th>
+                          <td><a href="/search/?qf=%E5%86%8D%E7%94%9F%E5%8C%BB%E7%99%82" class="link-page underline">再生医療</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%B9%B9%E7%B4%B0%E8%83%9E" class="link-page underline">幹細胞</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%86%8D%E7%94%9F%E5%8C%BB%E5%AD%A6" class="link-page underline">再生医学</a>&nbsp;/&nbsp;<a href="/search/?qf=%E7%B4%B0%E8%83%9E%E7%A7%BB%E6%A4%8D" class="link-page underline">細胞移植</a>&nbsp;/&nbsp;<a href="/search/?qf=%E9%96%93%E8%91%89%E7%B3%BB%E5%B9%B9%E7%B4%B0%E8%83%9E" class="link-page underline">間葉系幹細胞</a>&nbsp;/&nbsp;<a href="/search/?qf=ES%E7%B4%B0%E8%83%9E" class="link-page underline">ES細胞</a>&nbsp;/&nbsp;<a href="/search/?qf=iPS%E7%B4%B0%E8%83%9E" class="link-page underline">iPS細胞</a>&nbsp;/&nbsp;<a href="/search/?qf=%E7%A7%BB%E6%A4%8D%E3%83%BB%E5%86%8D%E7%94%9F%E5%8C%BB%E7%99%82" class="link-page underline">移植・再生医療</a>&nbsp;/&nbsp;<a href="/search/?qf=Ewing%E8%82%89%E8%85%AB" class="link-page underline">Ewing肉腫</a>&nbsp;/&nbsp;<a href="/search/?qf=EAT" class="link-page underline">EAT</a></td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究課題数</th>
+                          <td>109</td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究成果数</th>
+                          <td>333</td>
+                        </tr>
+
+                      </table>
+                    </div><!-- .listitem xfolkentry -->
+                  </li>
+
+
+                  <li>
+                    <div class="listitem xfolkentry">
+                      <h3 class="item_mainTitle">
+                        <div class="title">
+                        <input type="checkbox" class="chk_group" name="chk[]" id="chk_50143920" value="50143920" />
+                        <span class="row-number"> 2. </span><i class="fa fa-user"></i> <a class="link-page" href="/nrid/1000050143920/">真田 弘美<span class="subTitle">&nbsp;&nbsp;Sanada Hiromi&nbsp;&nbsp;(50143920)</span></a>
+                          </div>
+                      </h3>
+
+                      <table class="summary-table">
+
+                      <tr>
+                       <th>所属 (現在)</th>
+                       <td>
+
+                       石川県立看護大学,&nbsp;看護学部,&nbsp;教授
+
+                       </td>
+                      </tr>
+
+
+                        <tr>
+                          <th>審査区分/研究分野</th>
+                          <td>
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%94%9F%E7%89%A9%E7%B3%BB/%E5%8C%BB%E6%AD%AF%E8%96%AC%E5%AD%A6/%E7%9C%8B%E8%AD%B7%E5%AD%A6/%E5%9F%BA%E7%A4%8E%E7%9C%8B%E8%AD%B7%E5%AD%A6" class="link-page underline">基礎看護学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%3A%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%5D%E5%B0%8F%E5%8C%BA%E5%88%8658060%3A%E8%87%A8%E5%BA%8A%E7%9C%8B%E8%AD%B7%E5%AD%A6%E9%96%A2%E9%80%A3" class="link-page underline">小区分58060:臨床看護学関連</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%3A%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%5D%E4%B8%AD%E5%8C%BA%E5%88%8658%3A%E7%A4%BE%E4%BC%9A%E5%8C%BB%E5%AD%A6%E3%80%81%E7%9C%8B%E8%AD%B7%E5%AD%A6%E3%81%8A%E3%82%88%E3%81%B3%E3%81%9D%E3%81%AE%E9%96%A2%E9%80%A3%E5%88%86%E9%87%8E" class="link-page underline">中区分58:社会医学、看護学およびその関連分野</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%94%9F%E7%89%A9%E7%B3%BB/%E5%8C%BB%E6%AD%AF%E8%96%AC%E5%AD%A6/%E7%9C%8B%E8%AD%B7%E5%AD%A6/%E8%87%A8%E5%BA%8A%E7%9C%8B%E8%AD%B7%E5%AD%A6" class="link-page underline">臨床看護学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%94%9F%E7%89%A9%E7%B3%BB/%E5%8C%BB%E6%AD%AF%E8%96%AC%E5%AD%A6/%E7%9C%8B%E8%AD%B7%E5%AD%A6/%E9%AB%98%E9%BD%A2%E7%9C%8B%E8%AD%B7%E5%AD%A6" class="link-page underline">高齢看護学</a>
+                          </td>
+                        </tr>
+
+
+                        <tr>
+                          <th>キーワード</th>
+                          <td><a href="/search/?qf=%E8%A4%A5%E7%98%A1" class="link-page underline">褥瘡</a>&nbsp;/&nbsp;<a href="/search/?qf=%E7%9C%8B%E8%AD%B7%E7%90%86%E5%B7%A5%E5%AD%A6" class="link-page underline">看護理工学</a>&nbsp;/&nbsp;<a href="/search/?qf=%E7%9C%8B%E8%AD%B7%E6%8A%80%E8%A1%93" class="link-page underline">看護技術</a>&nbsp;/&nbsp;<a href="/search/?qf=%E9%AB%98%E9%BD%A2%E8%80%85" class="link-page underline">高齢者</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2" class="link-page underline">スキンケア</a>&nbsp;/&nbsp;<a href="/search/?qf=%E7%9C%8B%E8%AD%B7%E5%AD%A6" class="link-page underline">看護学</a>&nbsp;/&nbsp;<a href="/search/?qf=%E7%9C%8B%E8%AD%B7%E5%B7%A5%E5%AD%A6" class="link-page underline">看護工学</a>&nbsp;/&nbsp;<a href="/search/?qf=%E6%8C%AF%E5%8B%95" class="link-page underline">振動</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%89%B5%E5%82%B7%E6%B2%BB%E7%99%92" class="link-page underline">創傷治癒</a>&nbsp;/&nbsp;<a href="/search/?qf=pressure%20ulcer" class="link-page underline">pressure ulcer</a></td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究課題数</th>
+                          <td>104</td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究成果数</th>
+                          <td>575</td>
+                        </tr>
+
+                      </table>
+                    </div><!-- .listitem xfolkentry -->
+                  </li>
+
+
+                  <li>
+                    <div class="listitem xfolkentry">
+                      <h3 class="item_mainTitle">
+                        <div class="title">
+                        <input type="checkbox" class="chk_group" name="chk[]" id="chk_60160694" value="60160694" />
+                        <span class="row-number"> 3. </span><i class="fa fa-user"></i> <a class="link-page" href="/nrid/1000060160694/">岡野 栄之<span class="subTitle">&nbsp;&nbsp;Okano Hideyuki&nbsp;&nbsp;(60160694)</span></a>
+                          </div>
+                      </h3>
+
+                      <table class="summary-table">
+
+                      <tr>
+                       <th>所属 (現在)</th>
+                       <td>
+
+                       慶應義塾大学,&nbsp;大学共通,&nbsp;教授
+                       <br>
+                       国立研究開発法人理化学研究所,&nbsp;脳神経科学研究センター,&nbsp;チームディレクター
+
+                       </td>
+                      </tr>
+
+
+                        <tr>
+                          <th>審査区分/研究分野</th>
+                          <td>
+                          <a href="/search/?qd=%5B%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%3A%E5%AF%A9%E6%9F%BB%E5%B8%8C%E6%9C%9B%E9%83%A8%E9%96%80%28%E7%89%B9%E5%AE%9A%E9%A0%98%E5%9F%9F%E7%A0%94%E7%A9%B6%29%5D%E7%94%9F%E7%89%A9%E7%B3%BB" class="link-page underline">生物系</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%94%9F%E7%89%A9%E7%B3%BB/%E5%8C%BB%E6%AD%AF%E8%96%AC%E5%AD%A6/%E5%86%85%E7%A7%91%E7%B3%BB%E8%87%A8%E5%BA%8A%E5%8C%BB%E5%AD%A6/%E6%B6%88%E5%8C%96%E5%99%A8%E5%86%85%E7%A7%91%E5%AD%A6" class="link-page underline">消化器内科学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E8%A4%87%E5%90%88%E9%A0%98%E5%9F%9F/%E5%9F%BA%E7%A4%8E%E7%94%9F%E7%89%A9%E7%A7%91%E5%AD%A6/%E7%99%BA%E7%94%9F%E7%94%9F%E7%89%A9%E5%AD%A6" class="link-page underline">発生生物学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%94%9F%E7%89%A9%E7%B3%BB/%E5%8C%BB%E6%AD%AF%E8%96%AC%E5%AD%A6/%E5%A4%96%E7%A7%91%E7%B3%BB%E8%87%A8%E5%BA%8A%E5%8C%BB%E5%AD%A6/%E7%9C%BC%E7%A7%91%E5%AD%A6" class="link-page underline">眼科学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%94%9F%E7%89%A9%E7%B3%BB/%E5%8C%BB%E6%AD%AF%E8%96%AC%E5%AD%A6/%E5%A4%96%E7%A7%91%E7%B3%BB%E8%87%A8%E5%BA%8A%E5%8C%BB%E5%AD%A6/%E8%84%B3%E7%A5%9E%E7%B5%8C%E5%A4%96%E7%A7%91%E5%AD%A6" class="link-page underline">脳神経外科学</a>
+                          </td>
+                        </tr>
+
+
+                        <tr>
+                          <th>キーワード</th>
+                          <td><a href="/search/?qf=%E3%82%B7%E3%83%A7%E3%82%A6%E3%82%B8%E3%83%A7%E3%82%A6%E3%83%90%E3%82%A8" class="link-page underline">ショウジョウバエ</a>&nbsp;/&nbsp;<a href="/search/?qf=%E7%A5%9E%E7%B5%8C%E5%B9%B9%E7%B4%B0%E8%83%9E" class="link-page underline">神経幹細胞</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%B9%B9%E7%B4%B0%E8%83%9E" class="link-page underline">幹細胞</a>&nbsp;/&nbsp;<a href="/search/?qf=Musashi" class="link-page underline">Musashi</a>&nbsp;/&nbsp;<a href="/search/?qf=RNA%E7%B5%90%E5%90%88%E8%9B%8B%E7%99%BD%E8%B3%AA" class="link-page underline">RNA結合蛋白質</a>&nbsp;/&nbsp;<a href="/search/?qf=Ras" class="link-page underline">Ras</a>&nbsp;/&nbsp;<a href="/search/?qf=Argos" class="link-page underline">Argos</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%88%86%E5%8C%96" class="link-page underline">分化</a>&nbsp;/&nbsp;<a href="/search/?qf=neural%20stem%20cell" class="link-page underline">neural stem cell</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%82%B0%E3%83%AA%E3%82%A2%E7%B4%B0%E8%83%9E" class="link-page underline">グリア細胞</a></td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究課題数</th>
+                          <td>100</td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究成果数</th>
+                          <td>671</td>
+                        </tr>
+
+                      </table>
+                    </div><!-- .listitem xfolkentry -->
+                  </li>
+
+
+                  <li>
+                    <div class="listitem xfolkentry">
+                      <h3 class="item_mainTitle">
+                        <div class="title">
+                        <input type="checkbox" class="chk_group" name="chk[]" id="chk_30458963" value="30458963" />
+                        <span class="row-number"> 4. </span><i class="fa fa-user"></i> <a class="link-page" href="/nrid/1000030458963/">杉本 昌弘<span class="subTitle">&nbsp;&nbsp;Sugimoto Masahiro&nbsp;&nbsp;(30458963)</span></a>
+                          </div>
+                      </h3>
+
+                      <table class="summary-table">
+
+                      <tr>
+                       <th>所属 (現在)</th>
+                       <td>
+
+                       慶應義塾大学,&nbsp;政策・メディア研究科(藤沢),&nbsp;教授
+                       <br>
+                       東京医科大学,&nbsp;医学部,&nbsp;客員教授
+                       <br>
+                       京都大学,&nbsp;医学研究科,&nbsp;特定講師
+                       <br>
+                       筑波大学,&nbsp;プレシジョン・メディスン開発研究センター,&nbsp;客員教授
+
+                       </td>
+                      </tr>
+
+
+                        <tr>
+                          <th>審査区分/研究分野</th>
+                          <td>
+                          <a href="/search/?qd=%5B%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%3A%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%5D%E5%B0%8F%E5%8C%BA%E5%88%8655010%3A%E5%A4%96%E7%A7%91%E5%AD%A6%E4%B8%80%E8%88%AC%E3%81%8A%E3%82%88%E3%81%B3%E5%B0%8F%E5%85%90%E5%A4%96%E7%A7%91%E5%AD%A6%E9%96%A2%E9%80%A3" class="link-page underline">小区分55010:外科学一般および小児外科学関連</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%94%9F%E7%89%A9%E7%B3%BB/%E5%8C%BB%E6%AD%AF%E8%96%AC%E5%AD%A6/%E5%A4%96%E7%A7%91%E7%B3%BB%E8%87%A8%E5%BA%8A%E5%8C%BB%E5%AD%A6/%E6%B6%88%E5%8C%96%E5%99%A8%E5%A4%96%E7%A7%91%E5%AD%A6" class="link-page underline">消化器外科学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%94%9F%E7%89%A9%E7%B3%BB/%E5%8C%BB%E6%AD%AF%E8%96%AC%E5%AD%A6/%E5%A4%96%E7%A7%91%E7%B3%BB%E8%87%A8%E5%BA%8A%E5%8C%BB%E5%AD%A6/%E5%A4%96%E7%A7%91%E5%AD%A6%E4%B8%80%E8%88%AC" class="link-page underline">外科学一般</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%94%9F%E7%89%A9%E7%B3%BB/%E5%8C%BB%E6%AD%AF%E8%96%AC%E5%AD%A6/%E6%AD%AF%E5%AD%A6/%E7%97%85%E6%85%8B%E7%A7%91%E5%AD%A6%E7%B3%BB%E6%AD%AF%E5%AD%A6%E3%83%BB%E6%AD%AF%E7%A7%91%E6%94%BE%E5%B0%84%E7%B7%9A%E5%AD%A6" class="link-page underline">病態科学系歯学・歯科放射線学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%94%9F%E7%89%A9%E7%B3%BB/%E5%8C%BB%E6%AD%AF%E8%96%AC%E5%AD%A6/%E6%AD%AF%E5%AD%A6/%E7%A4%BE%E4%BC%9A%E7%B3%BB%E6%AD%AF%E5%AD%A6" class="link-page underline">社会系歯学</a>
+                          </td>
+                        </tr>
+
+
+                        <tr>
+                          <th>キーワード</th>
+                          <td><a href="/search/?qf=%E3%83%A1%E3%82%BF%E3%83%9C%E3%83%AD%E3%83%BC%E3%83%A0" class="link-page underline">メタボローム</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%94%BE%E6%B6%B2" class="link-page underline">唾液</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%83%A1%E3%82%BF%E3%83%9C%E3%83%AD%E3%83%BC%E3%83%A0%E8%A7%A3%E6%9E%90" class="link-page underline">メタボローム解析</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%83%90%E3%82%A4%E3%82%AA%E3%83%9E%E3%83%BC%E3%82%AB%E3%83%BC" class="link-page underline">バイオマーカー</a>&nbsp;/&nbsp;<a href="/search/?qf=%E4%B9%B3%E7%99%8C" class="link-page underline">乳癌</a>&nbsp;/&nbsp;<a href="/search/?qf=%E8%86%B5%E7%99%8C" class="link-page underline">膵癌</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0" class="link-page underline">スクリーニング</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%83%A1%E3%82%BF%E3%83%9C%E3%83%AD%E3%83%9F%E3%82%AF%E3%82%B9" class="link-page underline">メタボロミクス</a>&nbsp;/&nbsp;<a href="/search/?qf=%E8%A8%BA%E6%96%AD" class="link-page underline">診断</a>&nbsp;/&nbsp;<a href="/search/?qf=%E4%BA%BA%E5%B7%A5%E7%9F%A5%E8%83%BD" class="link-page underline">人工知能</a></td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究課題数</th>
+                          <td>83</td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究成果数</th>
+                          <td>300</td>
+                        </tr>
+
+                      </table>
+                    </div><!-- .listitem xfolkentry -->
+                  </li>
+
+
+                  <li>
+                    <div class="listitem xfolkentry">
+                      <h3 class="item_mainTitle">
+                        <div class="title">
+                        <input type="checkbox" class="chk_group" name="chk[]" id="chk_90145433" value="90145433" />
+                        <span class="row-number"> 5. </span><i class="fa fa-user"></i> <a class="link-page" href="/nrid/1000090145433/">本田 浩<span class="subTitle">&nbsp;&nbsp;HONDA Hiroshi&nbsp;&nbsp;(90145433)</span></a>
+                          </div>
+                      </h3>
+
+                      <table class="summary-table">
+
+                      <tr>
+                       <th>所属 (現在)</th>
+                       <td>
+
+                       九州大学,&nbsp;大学病院,&nbsp;教授
+
+                       </td>
+                      </tr>
+
+
+                        <tr>
+                          <th>審査区分/研究分野</th>
+                          <td>
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%94%9F%E7%89%A9%E7%B3%BB/%E5%8C%BB%E6%AD%AF%E8%96%AC%E5%AD%A6/%E5%86%85%E7%A7%91%E7%B3%BB%E8%87%A8%E5%BA%8A%E5%8C%BB%E5%AD%A6/%E6%94%BE%E5%B0%84%E7%B7%9A%E7%A7%91%E5%AD%A6" class="link-page underline">放射線科学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E5%8C%BB%E5%AD%A6/%E5%86%85%E7%A7%91/%E6%94%BE%E5%B0%84%E7%B7%9A%E7%A7%91%E5%AD%A6" class="link-page underline">放射線科学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%3A%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%5D%E5%B0%8F%E5%8C%BA%E5%88%8652040%3A%E6%94%BE%E5%B0%84%E7%B7%9A%E7%A7%91%E5%AD%A6%E9%96%A2%E9%80%A3" class="link-page underline">小区分52040:放射線科学関連</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%94%9F%E7%89%A9%E7%B3%BB/%E5%8C%BB%E6%AD%AF%E8%96%AC%E5%AD%A6/%E5%A4%96%E7%A7%91%E7%B3%BB%E8%87%A8%E5%BA%8A%E5%8C%BB%E5%AD%A6/%E6%B6%88%E5%8C%96%E5%99%A8%E5%A4%96%E7%A7%91%E5%AD%A6" class="link-page underline">消化器外科学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E5%8C%BB%E5%AD%A6/%E5%8C%BB%E5%AD%A6%E4%B8%80%E8%88%AC/%E5%BF%9C%E7%94%A8%E8%96%AC%E7%90%86%E5%AD%A6%E3%83%BB%E5%8C%BB%E7%99%82%E7%B3%BB%E8%96%AC%E5%AD%A6" class="link-page underline">応用薬理学・医療系薬学</a>
+                          </td>
+                        </tr>
+
+
+                        <tr>
+                          <th>キーワード</th>
+                          <td><a href="/search/?qf=MRI" class="link-page underline">MRI</a>&nbsp;/&nbsp;<a href="/search/?qf=MR" class="link-page underline">MR</a>&nbsp;/&nbsp;<a href="/search/?qf=PET" class="link-page underline">PET</a>&nbsp;/&nbsp;<a href="/search/?qf=%E8%82%BA%E7%99%8C" class="link-page underline">肺癌</a>&nbsp;/&nbsp;<a href="/search/?qf=%E6%94%BE%E5%B0%84%E7%B7%9A%E6%B2%BB%E7%99%82" class="link-page underline">放射線治療</a>&nbsp;/&nbsp;<a href="/search/?qf=%E4%BA%88%E5%BE%8C" class="link-page underline">予後</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%88%86%E5%AD%90%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E3%83%B3%E3%82%B0" class="link-page underline">分子イメージング</a>&nbsp;/&nbsp;<a href="/search/?qf=FDG-PET" class="link-page underline">FDG-PET</a>&nbsp;/&nbsp;<a href="/search/?qf=CEST" class="link-page underline">CEST</a>&nbsp;/&nbsp;<a href="/search/?qf=CT" class="link-page underline">CT</a></td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究課題数</th>
+                          <td>66</td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究成果数</th>
+                          <td>203</td>
+                        </tr>
+
+                      </table>
+                    </div><!-- .listitem xfolkentry -->
+                  </li>
+
+
+                  <li>
+                    <div class="listitem xfolkentry">
+                      <h3 class="item_mainTitle">
+                        <div class="title">
+                        <input type="checkbox" class="chk_group" name="chk[]" id="chk_90051614" value="90051614" />
+                        <span class="row-number"> 6. </span><i class="fa fa-user"></i> <a class="link-page" href="/nrid/1000090051614/">秦 順一<span class="subTitle">&nbsp;&nbsp;Hata Junichi&nbsp;&nbsp;(90051614)</span></a>
+                          </div>
+                      </h3>
+
+                      <table class="summary-table">
+
+                      <tr>
+                       <th>所属 (現在)</th>
+                       <td>
+
+                       公益財団法人実中研,&nbsp;役員,&nbsp;アドバイザー
+                       <br>
+                       国立研究開発法人国立成育医療研究センター,&nbsp;その他,&nbsp;名誉総長
+
+                       </td>
+                      </tr>
+
+
+                        <tr>
+                          <th>審査区分/研究分野</th>
+                          <td>
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E5%8C%BB%E5%AD%A6/%E7%97%85%E7%90%86/%E4%BA%BA%E4%BD%93%E7%97%85%E7%90%86%E5%AD%A6" class="link-page underline">人体病理学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E5%8C%BB%E5%AD%A6/%E7%97%85%E7%90%86/%E5%AE%9F%E9%A8%93%E7%97%85%E7%90%86%E5%AD%A6" class="link-page underline">実験病理学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%94%9F%E7%89%A9%E7%B3%BB/%E5%8C%BB%E6%AD%AF%E8%96%AC%E5%AD%A6/%E5%9F%BA%E7%A4%8E%E5%8C%BB%E5%AD%A6/%E4%BA%BA%E4%BD%93%E7%97%85%E7%90%86%E5%AD%A6" class="link-page underline">人体病理学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%94%9F%E7%89%A9%E7%B3%BB/%E5%8C%BB%E6%AD%AF%E8%96%AC%E5%AD%A6/%E6%AD%AF%E5%AD%A6/%E5%BD%A2%E6%85%8B%E7%B3%BB%E5%9F%BA%E7%A4%8E%E6%AD%AF%E7%A7%91%E5%AD%A6" class="link-page underline">形態系基礎歯科学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%94%9F%E7%89%A9%E7%B3%BB/%E5%8C%BB%E6%AD%AF%E8%96%AC%E5%AD%A6/%E5%A4%96%E7%A7%91%E7%B3%BB%E8%87%A8%E5%BA%8A%E5%8C%BB%E5%AD%A6/%E7%94%A3%E5%A9%A6%E4%BA%BA%E7%A7%91%E5%AD%A6" class="link-page underline">産婦人科学</a>
+                          </td>
+                        </tr>
+
+
+                        <tr>
+                          <th>キーワード</th>
+                          <td><a href="/search/?qf=Wilms%E8%85%AB%E7%98%8D" class="link-page underline">Wilms腫瘍</a>&nbsp;/&nbsp;<a href="/search/?qf=WT1%E9%81%BA%E4%BC%9D%E5%AD%90" class="link-page underline">WT1遺伝子</a>&nbsp;/&nbsp;<a href="/search/?qf=Denys-Drash%E7%97%87%E5%80%99%E7%BE%A4" class="link-page underline">Denys-Drash症候群</a>&nbsp;/&nbsp;<a href="/search/?qf=Ewing%E8%82%89%E8%85%AB" class="link-page underline">Ewing肉腫</a>&nbsp;/&nbsp;<a href="/search/?qf=EAT" class="link-page underline">EAT</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%86%8D%E7%94%9F%E5%8C%BB%E7%99%82" class="link-page underline">再生医療</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%B9%B9%E7%B4%B0%E8%83%9E" class="link-page underline">幹細胞</a>&nbsp;/&nbsp;<a href="/search/?qf=ES%E7%B4%B0%E8%83%9E" class="link-page underline">ES細胞</a>&nbsp;/&nbsp;<a href="/search/?qf=EWS" class="link-page underline">EWS</a>&nbsp;/&nbsp;<a href="/search/?qf=mcl-1" class="link-page underline">mcl-1</a></td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究課題数</th>
+                          <td>62</td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究成果数</th>
+                          <td>46</td>
+                        </tr>
+
+                      </table>
+                    </div><!-- .listitem xfolkentry -->
+                  </li>
+
+
+                  <li>
+                    <div class="listitem xfolkentry">
+                      <h3 class="item_mainTitle">
+                        <div class="title">
+                        <input type="checkbox" class="chk_group" name="chk[]" id="chk_10293664" value="10293664" />
+                        <span class="row-number"> 7. </span><i class="fa fa-user"></i> <a class="link-page" href="/nrid/1000010293664/">森 健策<span class="subTitle">&nbsp;&nbsp;MORI Kensaku&nbsp;&nbsp;(10293664)</span></a>
+                          </div>
+                      </h3>
+
+                      <table class="summary-table">
+
+                      <tr>
+                       <th>所属 (現在)</th>
+                       <td>
+
+                       名古屋大学,&nbsp;情報学研究科,&nbsp;教授
+
+                       </td>
+                      </tr>
+
+
+                        <tr>
+                          <th>審査区分/研究分野</th>
+                          <td>
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E8%A4%87%E5%90%88%E9%A0%98%E5%9F%9F/%E6%83%85%E5%A0%B1%E7%A7%91%E5%AD%A6/%E7%9F%A5%E8%83%BD%E6%83%85%E5%A0%B1%E5%AD%A6" class="link-page underline">知能情報学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%B7%8F%E5%90%88%E3%83%BB%E6%96%B0%E9%A0%98%E5%9F%9F%E7%B3%BB/%E7%B7%8F%E5%90%88%E9%A0%98%E5%9F%9F/%E4%BA%BA%E9%96%93%E5%8C%BB%E5%B7%A5%E5%AD%A6/%E5%8C%BB%E7%94%A8%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0" class="link-page underline">医用システム</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%B7%8F%E5%90%88%E3%83%BB%E6%96%B0%E9%A0%98%E5%9F%9F%E7%B3%BB/%E7%B7%8F%E5%90%88%E9%A0%98%E5%9F%9F/%E6%83%85%E5%A0%B1%E5%AD%A6/%E7%9F%A5%E8%A6%9A%E6%83%85%E5%A0%B1%E5%87%A6%E7%90%86%E3%83%BB%E7%9F%A5%E8%83%BD%E3%83%AD%E3%83%9C%E3%83%86%E3%82%A3%E3%82%AF%E3%82%B9" class="link-page underline">知覚情報処理・知能ロボティクス</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%3A%E5%AF%A9%E6%9F%BB%E5%B8%8C%E6%9C%9B%E5%8C%BA%E5%88%86%28%E6%96%B0%E5%AD%A6%E8%A1%93%E9%A0%98%E5%9F%9F%E7%A0%94%E7%A9%B6%29%5D%E7%90%86%E5%B7%A5%E7%B3%BB" class="link-page underline">理工系</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%94%9F%E7%89%A9%E7%B3%BB/%E5%8C%BB%E6%AD%AF%E8%96%AC%E5%AD%A6/%E5%A4%96%E7%A7%91%E7%B3%BB%E8%87%A8%E5%BA%8A%E5%8C%BB%E5%AD%A6/%E8%84%B3%E7%A5%9E%E7%B5%8C%E5%A4%96%E7%A7%91%E5%AD%A6" class="link-page underline">脳神経外科学</a>
+                          </td>
+                        </tr>
+
+
+                        <tr>
+                          <th>キーワード</th>
+                          <td><a href="/search/?qf=%E5%8C%BB%E7%94%A8%E7%94%BB%E5%83%8F%E5%87%A6%E7%90%86" class="link-page underline">医用画像処理</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%8C%BB%E7%94%A8%E7%94%BB%E5%83%8F" class="link-page underline">医用画像</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%82%BB%E3%82%B0%E3%83%A1%E3%83%B3%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3" class="link-page underline">セグメンテーション</a>&nbsp;/&nbsp;<a href="/search/?qf=3%E6%AC%A1%E5%85%83%E7%94%BB%E5%83%8F%E5%87%A6%E7%90%86" class="link-page underline">3次元画像処理</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%83%90%E3%83%BC%E3%83%81%E3%83%A3%E3%83%AB%E3%83%AA%E3%82%A2%E3%83%AA%E3%83%86%E3%82%A3" class="link-page underline">バーチャルリアリティ</a>&nbsp;/&nbsp;<a href="/search/?qf=%E7%94%BB%E5%83%8F%E8%AA%8D%E8%AD%98" class="link-page underline">画像認識</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%8F%AF%E8%A6%96%E5%8C%96" class="link-page underline">可視化</a>&nbsp;/&nbsp;<a href="/search/?qf=%E6%A9%9F%E6%A2%B0%E5%AD%A6%E7%BF%92" class="link-page underline">機械学習</a>&nbsp;/&nbsp;<a href="/search/?qf=%E4%BB%AE%E6%83%B3%E5%8C%96%E5%86%85%E8%A6%96%E9%8F%A1" class="link-page underline">仮想化内視鏡</a>&nbsp;/&nbsp;<a href="/search/?qf=3%E6%AC%A1%E5%85%83%E7%94%BB%E5%83%8F" class="link-page underline">3次元画像</a></td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究課題数</th>
+                          <td>62</td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究成果数</th>
+                          <td>1,658</td>
+                        </tr>
+
+                      </table>
+                    </div><!-- .listitem xfolkentry -->
+                  </li>
+
+
+                  <li>
+                    <div class="listitem xfolkentry">
+                      <h3 class="item_mainTitle">
+                        <div class="title">
+                        <input type="checkbox" class="chk_group" name="chk[]" id="chk_00332809" value="00332809" />
+                        <span class="row-number"> 8. </span><i class="fa fa-user"></i> <a class="link-page" href="/nrid/1000000332809/">寺井 崇二<span class="subTitle">&nbsp;&nbsp;Terai Shuji&nbsp;&nbsp;(00332809)</span></a>
+                          </div>
+                      </h3>
+
+                      <table class="summary-table">
+
+                      <tr>
+                       <th>所属 (現在)</th>
+                       <td>
+
+                       新潟大学,&nbsp;医歯学系,&nbsp;教授
+
+                       </td>
+                      </tr>
+
+
+                        <tr>
+                          <th>審査区分/研究分野</th>
+                          <td>
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%94%9F%E7%89%A9%E7%B3%BB/%E5%8C%BB%E6%AD%AF%E8%96%AC%E5%AD%A6/%E5%86%85%E7%A7%91%E7%B3%BB%E8%87%A8%E5%BA%8A%E5%8C%BB%E5%AD%A6/%E6%B6%88%E5%8C%96%E5%99%A8%E5%86%85%E7%A7%91%E5%AD%A6" class="link-page underline">消化器内科学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%3A%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%5D%E5%B0%8F%E5%8C%BA%E5%88%8653010%3A%E6%B6%88%E5%8C%96%E5%99%A8%E5%86%85%E7%A7%91%E5%AD%A6%E9%96%A2%E9%80%A3" class="link-page underline">小区分53010:消化器内科学関連</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E5%8C%BB%E5%AD%A6/%E5%86%85%E7%A7%91/%E6%B6%88%E5%8C%96%E5%99%A8%E5%86%85%E7%A7%91%E5%AD%A6" class="link-page underline">消化器内科学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%94%9F%E7%89%A9%E7%B3%BB/%E5%8C%BB%E6%AD%AF%E8%96%AC%E5%AD%A6/%E5%86%85%E7%A7%91%E7%B3%BB%E8%87%A8%E5%BA%8A%E5%8C%BB%E5%AD%A6/%E5%86%85%E7%A7%91%E5%AD%A6%E4%B8%80%E8%88%AC%28%E5%90%AB%E5%BF%83%E8%BA%AB%E5%8C%BB%E5%AD%A6%29" class="link-page underline">内科学一般(含心身医学)</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%3A%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%5D%E4%B8%AD%E5%8C%BA%E5%88%8653%3A%E5%99%A8%E5%AE%98%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E5%86%85%E7%A7%91%E5%AD%A6%E3%81%8A%E3%82%88%E3%81%B3%E3%81%9D%E3%81%AE%E9%96%A2%E9%80%A3%E5%88%86%E9%87%8E" class="link-page underline">中区分53:器官システム内科学およびその関連分野</a>
+                          </td>
+                        </tr>
+
+
+                        <tr>
+                          <th>キーワード</th>
+                          <td><a href="/search/?qf=%E9%AA%A8%E9%AB%84%E7%B4%B0%E8%83%9E" class="link-page underline">骨髄細胞</a>&nbsp;/&nbsp;<a href="/search/?qf=%E9%9D%9E%E3%82%A2%E3%83%AB%E3%82%B3%E3%83%BC%E3%83%AB%E6%80%A7%E8%84%82%E8%82%AA%E8%82%9D%E7%82%8E" class="link-page underline">非アルコール性脂肪肝炎</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%82%A8%E3%82%AF%E3%82%BD%E3%82%BD%E3%83%BC%E3%83%A0" class="link-page underline">エクソソーム</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%86%8D%E7%94%9F%E5%8C%BB%E7%99%82" class="link-page underline">再生医療</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%83%A1%E3%83%80%E3%82%AB" class="link-page underline">メダカ</a>&nbsp;/&nbsp;<a href="/search/?qf=%E8%82%9D%E7%B7%9A%E7%B6%AD%E5%8C%96" class="link-page underline">肝線維化</a>&nbsp;/&nbsp;<a href="/search/?qf=%E8%82%9D%E7%B4%B0%E8%83%9E%E7%99%8C" class="link-page underline">肝細胞癌</a>&nbsp;/&nbsp;<a href="/search/?qf=NASH" class="link-page underline">NASH</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%83%8F%E3%82%A4%E3%83%89%E3%83%AD%E3%83%80%E3%82%A4%E3%83%8A%E3%83%9F%E3%83%83%E3%82%AF%E9%81%BA%E4%BC%9D%E5%AD%90%E5%B0%8E%E5%85%A5%E6%B3%95" class="link-page underline">ハイドロダイナミック遺伝子導入法</a>&nbsp;/&nbsp;<a href="/search/?qf=%E7%B4%B0%E8%83%9E%E5%A4%96%E5%B0%8F%E8%83%9E" class="link-page underline">細胞外小胞</a></td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究課題数</th>
+                          <td>53</td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究成果数</th>
+                          <td>454</td>
+                        </tr>
+
+                      </table>
+                    </div><!-- .listitem xfolkentry -->
+                  </li>
+
+
+                  <li>
+                    <div class="listitem xfolkentry">
+                      <h3 class="item_mainTitle">
+                        <div class="title">
+                        <input type="checkbox" class="chk_group" name="chk[]" id="chk_40264733" value="40264733" />
+                        <span class="row-number"> 9. </span><i class="fa fa-user"></i> <a class="link-page" href="/nrid/1000040264733/">戸澤 啓一<span class="subTitle">&nbsp;&nbsp;Tozawa Keiichi&nbsp;&nbsp;(40264733)</span></a>
+                          </div>
+                      </h3>
+
+                      <table class="summary-table">
+
+                      <tr>
+                       <th>所属 (現在)</th>
+                       <td>
+
+                       名古屋市立大学,&nbsp;医薬学総合研究院(医学),&nbsp;教授
+
+                       </td>
+                      </tr>
+
+
+                        <tr>
+                          <th>審査区分/研究分野</th>
+                          <td>
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%94%9F%E7%89%A9%E7%B3%BB/%E5%8C%BB%E6%AD%AF%E8%96%AC%E5%AD%A6/%E5%A4%96%E7%A7%91%E7%B3%BB%E8%87%A8%E5%BA%8A%E5%8C%BB%E5%AD%A6/%E6%B3%8C%E5%B0%BF%E5%99%A8%E7%A7%91%E5%AD%A6" class="link-page underline">泌尿器科学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E5%8C%BB%E5%AD%A6/%E5%A4%96%E7%A7%91/%E6%B3%8C%E5%B0%BF%E5%99%A8%E7%A7%91%E5%AD%A6" class="link-page underline">泌尿器科学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%3A%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%5D%E5%B0%8F%E5%8C%BA%E5%88%8656030%3A%E6%B3%8C%E5%B0%BF%E5%99%A8%E7%A7%91%E5%AD%A6%E9%96%A2%E9%80%A3" class="link-page underline">小区分56030:泌尿器科学関連</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%3A%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%5D%E4%B8%AD%E5%8C%BA%E5%88%8658%3A%E7%A4%BE%E4%BC%9A%E5%8C%BB%E5%AD%A6%E3%80%81%E7%9C%8B%E8%AD%B7%E5%AD%A6%E3%81%8A%E3%82%88%E3%81%B3%E3%81%9D%E3%81%AE%E9%96%A2%E9%80%A3%E5%88%86%E9%87%8E" class="link-page underline">中区分58:社会医学、看護学およびその関連分野</a>
+                          </td>
+                        </tr>
+
+
+                        <tr>
+                          <th>キーワード</th>
+                          <td><a href="/search/?qf=%E5%B0%BF%E8%B7%AF%E7%B5%90%E7%9F%B3" class="link-page underline">尿路結石</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%82%AA%E3%82%B9%E3%83%86%E3%82%AA%E3%83%9D%E3%83%B3%E3%83%81%E3%83%B3" class="link-page underline">オステオポンチン</a>&nbsp;/&nbsp;<a href="/search/?qf=%E9%85%B8%E5%8C%96%E3%82%B9%E3%83%88%E3%83%AC%E3%82%B9" class="link-page underline">酸化ストレス</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%83%A1%E3%82%BF%E3%83%9C%E3%83%AA%E3%83%83%E3%82%AF%E3%82%B7%E3%83%B3%E3%83%89%E3%83%AD%E3%83%BC%E3%83%A0" class="link-page underline">メタボリックシンドローム</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%B0%BF%E8%B7%AF%E7%B5%90%E7%9F%B3%E7%97%87" class="link-page underline">尿路結石症</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%83%9E%E3%82%AF%E3%83%AD%E3%83%95%E3%82%A1%E3%83%BC%E3%82%B8" class="link-page underline">マクロファージ</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%89%8D%E7%AB%8B%E8%85%BA%E7%99%8C" class="link-page underline">前立腺癌</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%83%9F%E3%83%88%E3%82%B3%E3%83%B3%E3%83%89%E3%83%AA%E3%82%A2" class="link-page underline">ミトコンドリア</a>&nbsp;/&nbsp;<a href="/search/?qf=%E8%85%8E%E7%B5%90%E7%9F%B3" class="link-page underline">腎結石</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%82%A2%E3%83%87%E3%82%A3%E3%83%9D%E3%82%B5%E3%82%A4%E3%83%88%E3%82%AB%E3%82%A4%E3%83%B3" class="link-page underline">アディポサイトカイン</a></td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究課題数</th>
+                          <td>51</td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究成果数</th>
+                          <td>490</td>
+                        </tr>
+
+                      </table>
+                    </div><!-- .listitem xfolkentry -->
+                  </li>
+
+
+                  <li>
+                    <div class="listitem xfolkentry">
+                      <h3 class="item_mainTitle">
+                        <div class="title">
+                        <input type="checkbox" class="chk_group" name="chk[]" id="chk_70017424" value="70017424" />
+                        <span class="row-number"> 10. </span><i class="fa fa-user"></i> <a class="link-page" href="/nrid/1000070017424/">赤平 昌文<span class="subTitle">&nbsp;&nbsp;Akahira Masafumi&nbsp;&nbsp;(70017424)</span></a>
+                          </div>
+                      </h3>
+
+                      <table class="summary-table">
+
+                      <tr>
+                       <th>所属 (現在)</th>
+                       <td>
+
+                       筑波大学,&nbsp;数理物質系(名誉教授),&nbsp;名誉教授
+
+                       </td>
+                      </tr>
+
+
+                        <tr>
+                          <th>審査区分/研究分野</th>
+                          <td>
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%90%86%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%AD%A6%E4%B8%80%E8%88%AC%28%E5%90%AB%E7%A2%BA%E7%8E%87%E8%AB%96%E3%83%BB%E7%B5%B1%E8%A8%88%E6%95%B0%E5%AD%A6%29" class="link-page underline">数学一般</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%B7%8F%E5%90%88%E3%83%BB%E6%96%B0%E9%A0%98%E5%9F%9F%E7%B3%BB/%E7%B7%8F%E5%90%88%E9%A0%98%E5%9F%9F/%E6%83%85%E5%A0%B1%E5%AD%A6/%E7%B5%B1%E8%A8%88%E7%A7%91%E5%AD%A6" class="link-page underline">統計科学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%90%86%E5%B7%A5%E7%B3%BB/%E6%95%B0%E7%89%A9%E7%B3%BB%E7%A7%91%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%AD%A6%E4%B8%80%E8%88%AC%28%E5%90%AB%E7%A2%BA%E7%8E%87%E8%AB%96%E3%83%BB%E7%B5%B1%E8%A8%88%E6%95%B0%E5%AD%A6%29" class="link-page underline">数学一般(含確率論・統計数学)</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E8%A4%87%E5%90%88%E9%A0%98%E5%9F%9F/%E7%B5%B1%E8%A8%88%E7%A7%91%E5%AD%A6" class="link-page underline">統計科学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%3A%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%5D%E5%B0%8F%E5%8C%BA%E5%88%8660030%3A%E7%B5%B1%E8%A8%88%E7%A7%91%E5%AD%A6%E9%96%A2%E9%80%A3" class="link-page underline">小区分60030:統計科学関連</a>
+                          </td>
+                        </tr>
+
+
+                        <tr>
+                          <th>キーワード</th>
+                          <td><a href="/search/?qf=%E5%A4%9A%E5%A4%89%E9%87%8F%E8%A7%A3%E6%9E%90" class="link-page underline">多変量解析</a>&nbsp;/&nbsp;<a href="/search/?qf=%E9%80%90%E6%AC%A1%E6%8E%A8%E5%AE%9A" class="link-page underline">逐次推定</a>&nbsp;/&nbsp;<a href="/search/?qf=%E6%83%85%E5%A0%B1%E9%87%8F" class="link-page underline">情報量</a>&nbsp;/&nbsp;<a href="/search/?qf=%E6%BC%B8%E8%BF%91%E6%9C%89%E5%8A%B9%E6%80%A7" class="link-page underline">漸近有効性</a>&nbsp;/&nbsp;<a href="/search/?qf=%E6%A4%9C%E5%AE%9A" class="link-page underline">検定</a>&nbsp;/&nbsp;<a href="/search/?qf=%E6%9C%80%E5%B0%A4%E6%8E%A8%E5%AE%9A%E9%87%8F" class="link-page underline">最尤推定量</a>&nbsp;/&nbsp;<a href="/search/?qf=%E6%8E%A8%E5%AE%9A" class="link-page underline">推定</a>&nbsp;/&nbsp;<a href="/search/?qf=%E6%9C%89%E5%8A%B9%E6%80%A7" class="link-page underline">有効性</a>&nbsp;/&nbsp;<a href="/search/?qf=%E7%B5%B1%E8%A8%88%E9%87%8F" class="link-page underline">統計量</a>&nbsp;/&nbsp;<a href="/search/?qf=%E6%99%82%E7%B3%BB%E5%88%97%E8%A7%A3%E6%9E%90" class="link-page underline">時系列解析</a></td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究課題数</th>
+                          <td>48</td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究成果数</th>
+                          <td>193</td>
+                        </tr>
+
+                      </table>
+                    </div><!-- .listitem xfolkentry -->
+                  </li>
+
+
+                  <li>
+                    <div class="listitem xfolkentry">
+                      <h3 class="item_mainTitle">
+                        <div class="title">
+                        <input type="checkbox" class="chk_group" name="chk[]" id="chk_50250379" value="50250379" />
+                        <span class="row-number"> 11. </span><i class="fa fa-user"></i> <a class="link-page" href="/nrid/1000050250379/">今津 節生<span class="subTitle">&nbsp;&nbsp;IMAZU Setsuo&nbsp;&nbsp;(50250379)</span></a>
+                          </div>
+                      </h3>
+
+                      <table class="summary-table">
+
+                      <tr>
+                       <th>所属 (現在)</th>
+                       <td>
+
+                       奈良大学,&nbsp;その他部局等,&nbsp;学長
+                       <br>
+                       奈良大学,&nbsp;文学部,&nbsp;教授
+
+                       </td>
+                      </tr>
+
+
+                        <tr>
+                          <th>審査区分/研究分野</th>
+                          <td>
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E4%BA%BA%E6%96%87%E7%A4%BE%E4%BC%9A%E7%B3%BB/%E4%BA%BA%E6%96%87%E5%AD%A6/%E5%8F%B2%E5%AD%A6/%E8%80%83%E5%8F%A4%E5%AD%A6" class="link-page underline">考古学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%B7%8F%E5%90%88%E7%B3%BB/%E8%A4%87%E5%90%88%E9%A0%98%E5%9F%9F/%E6%96%87%E5%8C%96%E8%B2%A1%E7%A7%91%E5%AD%A6%E3%83%BB%E5%8D%9A%E7%89%A9%E9%A4%A8%E5%AD%A6/%E6%96%87%E5%8C%96%E8%B2%A1%E7%A7%91%E5%AD%A6%E3%83%BB%E5%8D%9A%E7%89%A9%E9%A4%A8%E5%AD%A6" class="link-page underline">文化財科学・博物館学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E5%BA%83%E9%A0%98%E5%9F%9F" class="link-page underline">広領域</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%3A%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%5D%E4%B8%AD%E5%8C%BA%E5%88%863%3A%E6%AD%B4%E5%8F%B2%E5%AD%A6%E3%80%81%E8%80%83%E5%8F%A4%E5%AD%A6%E3%80%81%E5%8D%9A%E7%89%A9%E9%A4%A8%E5%AD%A6%E3%81%8A%E3%82%88%E3%81%B3%E3%81%9D%E3%81%AE%E9%96%A2%E9%80%A3%E5%88%86%E9%87%8E" class="link-page underline">中区分3:歴史学、考古学、博物館学およびその関連分野</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%B7%8F%E5%90%88%E3%83%BB%E6%96%B0%E9%A0%98%E5%9F%9F%E7%B3%BB/%E7%B7%8F%E5%90%88%E9%A0%98%E5%9F%9F/%E6%96%87%E5%8C%96%E8%B2%A1%E7%A7%91%E5%AD%A6/%E6%96%87%E5%8C%96%E8%B2%A1%E7%A7%91%E5%AD%A6" class="link-page underline">文化財科学</a>
+                          </td>
+                        </tr>
+
+
+                        <tr>
+                          <th>キーワード</th>
+                          <td><a href="/search/?qf=X%E7%B7%9ACT" class="link-page underline">X線CT</a>&nbsp;/&nbsp;<a href="/search/?qf=X%E7%B7%9ACT%E3%82%B9%E3%82%AD%E3%83%A3%E3%83%8A" class="link-page underline">X線CTスキャナ</a>&nbsp;/&nbsp;<a href="/search/?qf=%E4%BF%9D%E5%AD%98%E7%A7%91%E5%AD%A6" class="link-page underline">保存科学</a>&nbsp;/&nbsp;<a href="/search/?qf=%E8%80%83%E5%8F%A4%E5%AD%A6" class="link-page underline">考古学</a>&nbsp;/&nbsp;<a href="/search/?qf=%E4%B8%89%E6%AC%A1%E5%85%83%E8%A8%88%E6%B8%AC" class="link-page underline">三次元計測</a>&nbsp;/&nbsp;<a href="/search/?qf=%EF%BC%B8%E7%B7%9A%EF%BC%A3%EF%BC%B4" class="link-page underline">Ｘ線ＣＴ</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%83%88%E3%83%AC%E3%83%8F%E3%83%AD%E3%83%BC%E3%82%B9" class="link-page underline">トレハロース</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%8F%A4%E5%A2%B3%E6%99%82%E4%BB%A3" class="link-page underline">古墳時代</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E3%82%A2%E3%83%BC%E3%82%AB%E3%82%A4%E3%83%96" class="link-page underline">デジタルアーカイブ</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%8F%A4%E5%A2%B3" class="link-page underline">古墳</a></td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究課題数</th>
+                          <td>47</td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究成果数</th>
+                          <td>316</td>
+                        </tr>
+
+                      </table>
+                    </div><!-- .listitem xfolkentry -->
+                  </li>
+
+
+                  <li>
+                    <div class="listitem xfolkentry">
+                      <h3 class="item_mainTitle">
+                        <div class="title">
+                        <input type="checkbox" class="chk_group" name="chk[]" id="chk_20344830" value="20344830" />
+                        <span class="row-number"> 12. </span><i class="fa fa-user"></i> <a class="link-page" href="/nrid/1000020344830/">舟生 日出男<span class="subTitle">&nbsp;&nbsp;Funaoi Hideo&nbsp;&nbsp;(20344830)</span></a>
+                          </div>
+                      </h3>
+
+                      <table class="summary-table">
+
+                      <tr>
+                       <th>所属 (現在)</th>
+                       <td>
+
+                       創価大学,&nbsp;教育学部,&nbsp;教授
+
+                       </td>
+                      </tr>
+
+
+                        <tr>
+                          <th>審査区分/研究分野</th>
+                          <td>
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%B7%8F%E5%90%88%E3%83%BB%E6%96%B0%E9%A0%98%E5%9F%9F%E7%B3%BB/%E7%B7%8F%E5%90%88%E9%A0%98%E5%9F%9F/%E7%A7%91%E5%AD%A6%E6%95%99%E8%82%B2%E3%83%BB%E6%95%99%E8%82%B2%E5%B7%A5%E5%AD%A6/%E6%95%99%E8%82%B2%E5%B7%A5%E5%AD%A6" class="link-page underline">教育工学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%B7%8F%E5%90%88%E7%B3%BB/%E8%A4%87%E5%90%88%E9%A0%98%E5%9F%9F/%E7%A7%91%E5%AD%A6%E6%95%99%E8%82%B2%E3%83%BB%E6%95%99%E8%82%B2%E5%B7%A5%E5%AD%A6/%E6%95%99%E8%82%B2%E5%B7%A5%E5%AD%A6" class="link-page underline">教育工学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%3A%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%5D%E5%B0%8F%E5%8C%BA%E5%88%8609070%3A%E6%95%99%E8%82%B2%E5%B7%A5%E5%AD%A6%E9%96%A2%E9%80%A3" class="link-page underline">小区分09070:教育工学関連</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%B7%8F%E5%90%88%E7%B3%BB/%E8%A4%87%E5%90%88%E9%A0%98%E5%9F%9F/%E7%A7%91%E5%AD%A6%E6%95%99%E8%82%B2%E3%83%BB%E6%95%99%E8%82%B2%E5%B7%A5%E5%AD%A6/%E7%A7%91%E5%AD%A6%E6%95%99%E8%82%B2" class="link-page underline">科学教育</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%3A%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%5D%E5%B0%8F%E5%8C%BA%E5%88%8609080%3A%E7%A7%91%E5%AD%A6%E6%95%99%E8%82%B2%E9%96%A2%E9%80%A3" class="link-page underline">小区分09080:科学教育関連</a>
+                          </td>
+                        </tr>
+
+
+                        <tr>
+                          <th>キーワード</th>
+                          <td><a href="/search/?qf=%E7%A7%91%E5%AD%A6%E6%95%99%E8%82%B2" class="link-page underline">科学教育</a>&nbsp;/&nbsp;<a href="/search/?qf=CSCL" class="link-page underline">CSCL</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%8D%94%E8%AA%BF%E5%AD%A6%E7%BF%92" class="link-page underline">協調学習</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%AD%A6%E7%BF%92%E6%94%AF%E6%8F%B4%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0" class="link-page underline">学習支援システム</a>&nbsp;/&nbsp;<a href="/search/?qf=%E6%95%99%E8%82%B2%E5%B7%A5%E5%AD%A6" class="link-page underline">教育工学</a>&nbsp;/&nbsp;<a href="/search/?qf=%E6%95%99%E5%B8%AB%E6%95%99%E8%82%B2" class="link-page underline">教師教育</a>&nbsp;/&nbsp;<a href="/search/?qf=%E7%90%86%E7%A7%91%E6%95%99%E8%82%B2" class="link-page underline">理科教育</a>&nbsp;/&nbsp;<a href="/search/?qf=%E6%83%85%E5%A0%B1%E6%95%99%E8%82%B2" class="link-page underline">情報教育</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%82%B3%E3%83%B3%E3%82%BB%E3%83%97%E3%83%88%E3%83%9E%E3%83%83%E3%83%97" class="link-page underline">コンセプトマップ</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%8D%94%E5%90%8C%E5%AD%A6%E7%BF%92" class="link-page underline">協同学習</a></td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究課題数</th>
+                          <td>47</td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究成果数</th>
+                          <td>308</td>
+                        </tr>
+
+                      </table>
+                    </div><!-- .listitem xfolkentry -->
+                  </li>
+
+
+                  <li>
+                    <div class="listitem xfolkentry">
+                      <h3 class="item_mainTitle">
+                        <div class="title">
+                        <input type="checkbox" class="chk_group" name="chk[]" id="chk_90222447" value="90222447" />
+                        <span class="row-number"> 13. </span><i class="fa fa-user"></i> <a class="link-page" href="/nrid/1000090222447/">相澤 彰子<span class="subTitle">&nbsp;&nbsp;AIZAWA Akiko&nbsp;&nbsp;(90222447)</span></a>
+                          </div>
+                      </h3>
+
+                      <table class="summary-table">
+
+                      <tr>
+                       <th>所属 (現在)</th>
+                       <td>
+
+                       国立情報学研究所,&nbsp;コンテンツ科学研究系,&nbsp;教授
+
+                       </td>
+                      </tr>
+
+
+                        <tr>
+                          <th>審査区分/研究分野</th>
+                          <td>
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%B7%8F%E5%90%88%E3%83%BB%E6%96%B0%E9%A0%98%E5%9F%9F%E7%B3%BB/%E7%B7%8F%E5%90%88%E9%A0%98%E5%9F%9F/%E6%83%85%E5%A0%B1%E5%AD%A6/%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E6%83%85%E5%A0%B1%E5%AD%A6%E3%83%BB%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9" class="link-page underline">メディア情報学・データベース</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E5%B7%A5%E5%AD%A6/%E9%9B%BB%E6%B0%97%E9%9B%BB%E5%AD%90%E5%B7%A5%E5%AD%A6/%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E5%B7%A5%E5%AD%A6" class="link-page underline">システム工学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E8%A4%87%E5%90%88%E9%A0%98%E5%9F%9F/%E6%83%85%E5%A0%B1%E7%A7%91%E5%AD%A6/%E6%83%85%E5%A0%B1%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E5%AD%A6%28%E5%90%AB%E6%83%85%E5%A0%B1%E5%9B%B3%E6%9B%B8%E9%A4%A8%E5%AD%A6%29" class="link-page underline">情報システム学(含情報図書館学)</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%B7%8F%E5%90%88%E7%B3%BB/%E6%83%85%E5%A0%B1%E5%AD%A6/%E6%83%85%E5%A0%B1%E5%AD%A6%E3%83%95%E3%83%AD%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2/%E5%9B%B3%E6%9B%B8%E9%A4%A8%E6%83%85%E5%A0%B1%E5%AD%A6%E3%83%BB%E4%BA%BA%E6%96%87%E7%A4%BE%E4%BC%9A%E6%83%85%E5%A0%B1%E5%AD%A6" class="link-page underline">図書館情報学・人文社会情報学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%B7%8F%E5%90%88%E3%83%BB%E6%96%B0%E9%A0%98%E5%9F%9F%E7%B3%BB/%E7%B7%8F%E5%90%88%E9%A0%98%E5%9F%9F/%E6%83%85%E5%A0%B1%E5%AD%A6/%E7%9F%A5%E8%83%BD%E6%83%85%E5%A0%B1%E5%AD%A6" class="link-page underline">知能情報学</a>
+                          </td>
+                        </tr>
+
+
+                        <tr>
+                          <th>キーワード</th>
+                          <td><a href="/search/?qf=%E6%83%85%E5%A0%B1%E6%A4%9C%E7%B4%A2" class="link-page underline">情報検索</a>&nbsp;/&nbsp;<a href="/search/?qf=%E8%87%AA%E7%84%B6%E8%A8%80%E8%AA%9E%E5%87%A6%E7%90%86" class="link-page underline">自然言語処理</a>&nbsp;/&nbsp;<a href="/search/?qf=%E9%81%BA%E4%BC%9D%E7%9A%84%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0" class="link-page underline">遺伝的アルゴリズム</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88" class="link-page underline">インターネット</a>&nbsp;/&nbsp;<a href="/search/?qf=%E6%83%85%E5%A0%B1%E3%83%AA%E3%83%B3%E3%82%B1%E3%83%BC%E3%82%B8" class="link-page underline">情報リンケージ</a>&nbsp;/&nbsp;<a href="/search/?qf=%E6%A9%9F%E6%A2%B0%E5%AD%A6%E7%BF%92" class="link-page underline">機械学習</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9" class="link-page underline">データベース</a>&nbsp;/&nbsp;<a href="/search/?qf=%E6%83%85%E5%A0%B1%E6%8A%BD%E5%87%BA" class="link-page underline">情報抽出</a>&nbsp;/&nbsp;<a href="/search/?qf=%E8%A6%96%E7%B7%9A%E8%A8%88%E6%B8%AC" class="link-page underline">視線計測</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%AD%A6%E8%A1%93%E6%83%85%E5%A0%B1" class="link-page underline">学術情報</a></td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究課題数</th>
+                          <td>47</td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究成果数</th>
+                          <td>269</td>
+                        </tr>
+
+                      </table>
+                    </div><!-- .listitem xfolkentry -->
+                  </li>
+
+
+                  <li>
+                    <div class="listitem xfolkentry">
+                      <h3 class="item_mainTitle">
+                        <div class="title">
+                        <input type="checkbox" class="chk_group" name="chk[]" id="chk_80345214" value="80345214" />
+                        <span class="row-number"> 14. </span><i class="fa fa-user"></i> <a class="link-page" href="/nrid/1000080345214/">佐田 政隆<span class="subTitle">&nbsp;&nbsp;Sata Masataka&nbsp;&nbsp;(80345214)</span></a>
+                          </div>
+                      </h3>
+
+                      <table class="summary-table">
+
+                      <tr>
+                       <th>所属 (現在)</th>
+                       <td>
+
+                       徳島大学,&nbsp;大学院医歯薬学研究部(医学域),&nbsp;教授
+
+                       </td>
+                      </tr>
+
+
+                        <tr>
+                          <th>審査区分/研究分野</th>
+                          <td>
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%94%9F%E7%89%A9%E7%B3%BB/%E5%8C%BB%E6%AD%AF%E8%96%AC%E5%AD%A6/%E5%86%85%E7%A7%91%E7%B3%BB%E8%87%A8%E5%BA%8A%E5%8C%BB%E5%AD%A6/%E5%BE%AA%E7%92%B0%E5%99%A8%E5%86%85%E7%A7%91%E5%AD%A6" class="link-page underline">循環器内科学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%3A%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%5D%E5%B0%8F%E5%8C%BA%E5%88%8653020%3A%E5%BE%AA%E7%92%B0%E5%99%A8%E5%86%85%E7%A7%91%E5%AD%A6%E9%96%A2%E9%80%A3" class="link-page underline">小区分53020:循環器内科学関連</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E5%8C%BB%E5%AD%A6/%E5%86%85%E7%A7%91/%E5%BE%AA%E7%92%B0%E5%99%A8%E5%86%85%E7%A7%91%E5%AD%A6" class="link-page underline">循環器内科学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%3A%E5%AF%A9%E6%9F%BB%E5%B8%8C%E6%9C%9B%E9%83%A8%E9%96%80%28%E7%89%B9%E5%AE%9A%E9%A0%98%E5%9F%9F%E7%A0%94%E7%A9%B6%29%5D%E7%94%9F%E7%89%A9%E7%B3%BB" class="link-page underline">生物系</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%94%9F%E7%89%A9%E7%B3%BB/%E5%8C%BB%E6%AD%AF%E8%96%AC%E5%AD%A6/%E5%A4%96%E7%A7%91%E7%B3%BB%E8%87%A8%E5%BA%8A%E5%8C%BB%E5%AD%A6/%E8%84%B3%E7%A5%9E%E7%B5%8C%E5%A4%96%E7%A7%91%E5%AD%A6" class="link-page underline">脳神経外科学</a>
+                          </td>
+                        </tr>
+
+
+                        <tr>
+                          <th>キーワード</th>
+                          <td><a href="/search/?qf=%E5%8B%95%E8%84%88%E7%A1%AC%E5%8C%96" class="link-page underline">動脈硬化</a>&nbsp;/&nbsp;<a href="/search/?qf=%E8%A1%80%E7%AE%A1" class="link-page underline">血管</a>&nbsp;/&nbsp;<a href="/search/?qf=%E6%85%A2%E6%80%A7%E7%82%8E%E7%97%87" class="link-page underline">慢性炎症</a>&nbsp;/&nbsp;<a href="/search/?qf=%E8%A1%80%E7%AE%A1%E6%96%B0%E7%94%9F" class="link-page underline">血管新生</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%86%85%E7%9A%AE%E7%B4%B0%E8%83%9E" class="link-page underline">内皮細胞</a>&nbsp;/&nbsp;<a href="/search/?qf=%E7%82%8E%E7%97%87" class="link-page underline">炎症</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%83%9E%E3%82%AF%E3%83%AD%E3%83%95%E3%82%A1%E3%83%BC%E3%82%B8" class="link-page underline">マクロファージ</a>&nbsp;/&nbsp;<a href="/search/?qf=%E8%84%82%E8%82%AA" class="link-page underline">脂肪</a>&nbsp;/&nbsp;<a href="/search/?qf=%E8%87%AA%E7%84%B6%E5%85%8D%E7%96%AB" class="link-page underline">自然免疫</a>&nbsp;/&nbsp;<a href="/search/?qf=%E7%94%9F%E6%B4%BB%E7%BF%92%E6%85%A3%E7%97%85" class="link-page underline">生活習慣病</a></td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究課題数</th>
+                          <td>46</td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究成果数</th>
+                          <td>1,256</td>
+                        </tr>
+
+                      </table>
+                    </div><!-- .listitem xfolkentry -->
+                  </li>
+
+
+                  <li>
+                    <div class="listitem xfolkentry">
+                      <h3 class="item_mainTitle">
+                        <div class="title">
+                        <input type="checkbox" class="chk_group" name="chk[]" id="chk_10175953" value="10175953" />
+                        <span class="row-number"> 15. </span><i class="fa fa-user"></i> <a class="link-page" href="/nrid/1000010175953/">新井 仁之<span class="subTitle">&nbsp;&nbsp;Arai Hitoshi&nbsp;&nbsp;(10175953)</span></a>
+                          </div>
+                      </h3>
+
+                      <table class="summary-table">
+
+                      <tr>
+                       <th>所属 (現在)</th>
+                       <td>
+
+                       早稲田大学,&nbsp;教育・総合科学学術院,&nbsp;教授
+
+                       </td>
+                      </tr>
+
+
+                        <tr>
+                          <th>審査区分/研究分野</th>
+                          <td>
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%90%86%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E8%A7%A3%E6%9E%90%E5%AD%A6" class="link-page underline">解析学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%90%86%E5%B7%A5%E7%B3%BB/%E6%95%B0%E7%89%A9%E7%B3%BB%E7%A7%91%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E5%9F%BA%E7%A4%8E%E8%A7%A3%E6%9E%90%E5%AD%A6" class="link-page underline">基礎解析学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%90%86%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E5%A4%A7%E5%9F%9F%E8%A7%A3%E6%9E%90%E5%AD%A6" class="link-page underline">大域解析学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%90%86%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E5%B9%BE%E4%BD%95%E5%AD%A6" class="link-page underline">幾何学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%90%86%E5%B7%A5%E7%B3%BB/%E6%95%B0%E7%89%A9%E7%B3%BB%E7%A7%91%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E5%B9%BE%E4%BD%95%E5%AD%A6" class="link-page underline">幾何学</a>
+                          </td>
+                        </tr>
+
+
+                        <tr>
+                          <th>キーワード</th>
+                          <td><a href="/search/?qf=%E9%8C%AF%E8%A6%96" class="link-page underline">錯視</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%82%A6%E3%82%A7%E3%83%BC%E3%83%96%E3%83%AC%E3%83%83%E3%83%88" class="link-page underline">ウェーブレット</a>&nbsp;/&nbsp;<a href="/search/?qf=%E8%AA%BF%E5%92%8C%E8%A7%A3%E6%9E%90" class="link-page underline">調和解析</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AC%E3%83%83%E3%83%88" class="link-page underline">フレームレット</a>&nbsp;/&nbsp;<a href="/search/?qf=%E7%94%BB%E5%83%8F%E5%87%A6%E7%90%86" class="link-page underline">画像処理</a>&nbsp;/&nbsp;<a href="/search/?qf=%E8%A6%96%E8%A6%9A%E6%83%85%E5%A0%B1%E5%87%A6%E7%90%86" class="link-page underline">視覚情報処理</a>&nbsp;/&nbsp;<a href="/search/?qf=%E8%AA%BF%E5%92%8C%E5%86%99%E5%83%8F" class="link-page underline">調和写像</a>&nbsp;/&nbsp;<a href="/search/?qf=%E8%AA%BF%E5%92%8C%E9%96%A2%E6%95%B0" class="link-page underline">調和関数</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%81%8B%E3%81%96%E3%81%90%E3%82%8B%E3%81%BE%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AC%E3%83%83%E3%83%88" class="link-page underline">かざぐるまフレームレット</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E9%96%A2%E6%95%B0" class="link-page underline">ブロック関数</a></td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究課題数</th>
+                          <td>46</td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究成果数</th>
+                          <td>160</td>
+                        </tr>
+
+                      </table>
+                    </div><!-- .listitem xfolkentry -->
+                  </li>
+
+
+                  <li>
+                    <div class="listitem xfolkentry">
+                      <h3 class="item_mainTitle">
+                        <div class="title">
+                        <input type="checkbox" class="chk_group" name="chk[]" id="chk_90273333" value="90273333" />
+                        <span class="row-number"> 16. </span><i class="fa fa-user"></i> <a class="link-page" href="/nrid/1000090273333/">峯松 信明<span class="subTitle">&nbsp;&nbsp;Minematsu Nobuaki&nbsp;&nbsp;(90273333)</span></a>
+                          </div>
+                      </h3>
+
+                      <table class="summary-table">
+
+                      <tr>
+                       <th>所属 (現在)</th>
+                       <td>
+
+                       東京大学,&nbsp;大学院工学系研究科(工学部),&nbsp;教授
+
+                       </td>
+                      </tr>
+
+
+                        <tr>
+                          <th>審査区分/研究分野</th>
+                          <td>
+                          <a href="/search/?qd=%5B%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%3A%E5%AF%A9%E6%9F%BB%E5%B8%8C%E6%9C%9B%E9%83%A8%E9%96%80%28%E7%89%B9%E5%AE%9A%E9%A0%98%E5%9F%9F%E7%A0%94%E7%A9%B6%29%5D%E7%90%86%E5%B7%A5%E7%B3%BB" class="link-page underline">理工系</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E8%A4%87%E5%90%88%E9%A0%98%E5%9F%9F/%E6%83%85%E5%A0%B1%E7%A7%91%E5%AD%A6/%E7%9F%A5%E8%83%BD%E6%83%85%E5%A0%B1%E5%AD%A6" class="link-page underline">知能情報学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%B7%8F%E5%90%88%E3%83%BB%E6%96%B0%E9%A0%98%E5%9F%9F%E7%B3%BB/%E7%B7%8F%E5%90%88%E9%A0%98%E5%9F%9F/%E6%83%85%E5%A0%B1%E5%AD%A6/%E7%9F%A5%E8%A6%9A%E6%83%85%E5%A0%B1%E5%87%A6%E7%90%86%E3%83%BB%E7%9F%A5%E8%83%BD%E3%83%AD%E3%83%9C%E3%83%86%E3%82%A3%E3%82%AF%E3%82%B9" class="link-page underline">知覚情報処理・知能ロボティクス</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E4%BA%BA%E6%96%87%E7%A4%BE%E4%BC%9A%E7%B3%BB/%E4%BA%BA%E6%96%87%E5%AD%A6/%E8%A8%80%E8%AA%9E%E5%AD%A6/%E5%A4%96%E5%9B%BD%E8%AA%9E%E6%95%99%E8%82%B2" class="link-page underline">外国語教育</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%B7%8F%E5%90%88%E7%B3%BB/%E6%83%85%E5%A0%B1%E5%AD%A6/%E4%BA%BA%E9%96%93%E6%83%85%E5%A0%B1%E5%AD%A6/%E7%9F%A5%E8%A6%9A%E6%83%85%E5%A0%B1%E5%87%A6%E7%90%86" class="link-page underline">知覚情報処理</a>
+                          </td>
+                        </tr>
+
+
+                        <tr>
+                          <th>キーワード</th>
+                          <td><a href="/search/?qf=%E9%9F%B3%E5%A3%B0%E8%AA%8D%E8%AD%98" class="link-page underline">音声認識</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%82%B7%E3%83%A3%E3%83%89%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0" class="link-page underline">シャドーイング</a>&nbsp;/&nbsp;<a href="/search/?qf=%E9%9F%B3%E5%A3%B0%E3%81%AE%E6%A7%8B%E9%80%A0%E7%9A%84%E8%A1%A8%E8%B1%A1" class="link-page underline">音声の構造的表象</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%A4%96%E5%9B%BD%E8%AA%9E%E6%95%99%E8%82%B2" class="link-page underline">外国語教育</a>&nbsp;/&nbsp;<a href="/search/?qf=%E9%9F%BB%E5%BE%8B%E7%9A%84%E7%89%B9%E5%BE%B4" class="link-page underline">韻律的特徴</a>&nbsp;/&nbsp;<a href="/search/?qf=f-divergence" class="link-page underline">f-divergence</a>&nbsp;/&nbsp;<a href="/search/?qf=%E6%A7%8B%E9%80%A0%E4%B8%8D%E5%A4%89%E3%81%AE%E5%AE%9A%E7%90%86" class="link-page underline">構造不変の定理</a>&nbsp;/&nbsp;<a href="/search/?qf=%E7%94%9F%E6%88%90%E9%81%8E%E7%A8%8B%E3%83%A2%E3%83%87%E3%83%AB" class="link-page underline">生成過程モデル</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%A4%96%E5%9B%BD%E8%AA%9E%E5%AD%A6%E7%BF%92" class="link-page underline">外国語学習</a>&nbsp;/&nbsp;<a href="/search/?qf=%E8%87%AA%E5%8B%95%E8%A9%95%E4%BE%A1" class="link-page underline">自動評価</a></td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究課題数</th>
+                          <td>46</td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究成果数</th>
+                          <td>799</td>
+                        </tr>
+
+                      </table>
+                    </div><!-- .listitem xfolkentry -->
+                  </li>
+
+
+                  <li>
+                    <div class="listitem xfolkentry">
+                      <h3 class="item_mainTitle">
+                        <div class="title">
+                        <input type="checkbox" class="chk_group" name="chk[]" id="chk_20243040" value="20243040" />
+                        <span class="row-number"> 17. </span><i class="fa fa-user"></i> <a class="link-page" href="/nrid/1000020243040/">南 雅文<span class="subTitle">&nbsp;&nbsp;Minami Masabumi&nbsp;&nbsp;(20243040)</span></a>
+                          </div>
+                      </h3>
+
+                      <table class="summary-table">
+
+                      <tr>
+                       <th>所属 (現在)</th>
+                       <td>
+
+                       北海道大学,&nbsp;薬学研究院,&nbsp;教授
+
+                       </td>
+                      </tr>
+
+
+                        <tr>
+                          <th>審査区分/研究分野</th>
+                          <td>
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E5%8C%BB%E5%AD%A6/%E8%96%AC%E5%AD%A6/%E7%94%9F%E7%89%A9%E7%B3%BB%E8%96%AC%E5%AD%A6" class="link-page underline">生物系薬学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%94%9F%E7%89%A9%E7%B3%BB/%E5%8C%BB%E6%AD%AF%E8%96%AC%E5%AD%A6/%E8%96%AC%E5%AD%A6/%E7%94%9F%E7%89%A9%E7%B3%BB%E8%96%AC%E5%AD%A6" class="link-page underline">生物系薬学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%3A%E5%AF%A9%E6%9F%BB%E5%B8%8C%E6%9C%9B%E9%83%A8%E9%96%80%28%E7%89%B9%E5%AE%9A%E9%A0%98%E5%9F%9F%E7%A0%94%E7%A9%B6%29%5D%E7%94%9F%E7%89%A9%E7%B3%BB" class="link-page underline">生物系</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%3A%E5%AF%A9%E6%9F%BB%E5%B8%8C%E6%9C%9B%E5%8C%BA%E5%88%86%28%E6%96%B0%E5%AD%A6%E8%A1%93%E9%A0%98%E5%9F%9F%E7%A0%94%E7%A9%B6%29%5D%E7%94%9F%E7%89%A9%E7%B3%BB" class="link-page underline">生物系</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E5%8C%BB%E5%AD%A6/%E7%94%9F%E7%90%86/%E8%96%AC%E7%90%86%E5%AD%A6%E4%B8%80%E8%88%AC" class="link-page underline">薬理学一般</a>
+                          </td>
+                        </tr>
+
+
+                        <tr>
+                          <th>キーワード</th>
+                          <td><a href="/search/?qf=%E3%82%A2%E3%82%B9%E3%83%88%E3%83%AD%E3%82%B5%E3%82%A4%E3%83%88" class="link-page underline">アストロサイト</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%82%B5%E3%82%A4%E3%83%88%E3%82%AB%E3%82%A4%E3%83%B3" class="link-page underline">サイトカイン</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%83%9F%E3%82%AF%E3%83%AD%E3%82%B0%E3%83%AA%E3%82%A2" class="link-page underline">ミクログリア</a>&nbsp;/&nbsp;<a href="/search/?qf=%E6%83%85%E5%8B%95" class="link-page underline">情動</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%82%AA%E3%83%94%E3%82%AA%E3%82%A4%E3%83%89%E5%8F%97%E5%AE%B9%E4%BD%93" class="link-page underline">オピオイド受容体</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%82%B1%E3%83%A2%E3%82%AB%E3%82%A4%E3%83%B3" class="link-page underline">ケモカイン</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%88%86%E7%95%8C%E6%9D%A1%E5%BA%8A%E6%A0%B8" class="link-page underline">分界条床核</a>&nbsp;/&nbsp;<a href="/search/?qf=%E6%8A%91%E3%81%86%E3%81%A4" class="link-page underline">抑うつ</a>&nbsp;/&nbsp;<a href="/search/?qf=%E4%B8%8D%E5%AE%89" class="link-page underline">不安</a>&nbsp;/&nbsp;<a href="/search/?qf=%E8%84%B3%E8%99%9A%E8%A1%80" class="link-page underline">脳虚血</a></td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究課題数</th>
+                          <td>44</td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究成果数</th>
+                          <td>218</td>
+                        </tr>
+
+                      </table>
+                    </div><!-- .listitem xfolkentry -->
+                  </li>
+
+
+                  <li>
+                    <div class="listitem xfolkentry">
+                      <h3 class="item_mainTitle">
+                        <div class="title">
+                        <input type="checkbox" class="chk_group" name="chk[]" id="chk_50397717" value="50397717" />
+                        <span class="row-number"> 18. </span><i class="fa fa-user"></i> <a class="link-page" href="/nrid/1000050397717/">寺尾 豊<span class="subTitle">&nbsp;&nbsp;Terao Yutaka&nbsp;&nbsp;(50397717)</span></a>
+                          </div>
+                      </h3>
+
+                      <table class="summary-table">
+
+                      <tr>
+                       <th>所属 (現在)</th>
+                       <td>
+
+                       新潟大学,&nbsp;医歯学系,&nbsp;教授
+
+                       </td>
+                      </tr>
+
+
+                        <tr>
+                          <th>審査区分/研究分野</th>
+                          <td>
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%94%9F%E7%89%A9%E7%B3%BB/%E5%8C%BB%E6%AD%AF%E8%96%AC%E5%AD%A6/%E6%AD%AF%E5%AD%A6/%E5%BD%A2%E6%85%8B%E7%B3%BB%E5%9F%BA%E7%A4%8E%E6%AD%AF%E7%A7%91%E5%AD%A6" class="link-page underline">形態系基礎歯科学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%3A%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%5D%E4%B8%AD%E5%8C%BA%E5%88%8657%3A%E5%8F%A3%E8%85%94%E7%A7%91%E5%AD%A6%E3%81%8A%E3%82%88%E3%81%B3%E3%81%9D%E3%81%AE%E9%96%A2%E9%80%A3%E5%88%86%E9%87%8E" class="link-page underline">中区分57:口腔科学およびその関連分野</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%94%9F%E7%89%A9%E7%B3%BB/%E5%8C%BB%E6%AD%AF%E8%96%AC%E5%AD%A6/%E6%AD%AF%E5%AD%A6/%E7%97%85%E6%85%8B%E7%A7%91%E5%AD%A6%E7%B3%BB%E6%AD%AF%E5%AD%A6%E3%83%BB%E6%AD%AF%E7%A7%91%E6%94%BE%E5%B0%84%E7%B7%9A%E5%AD%A6" class="link-page underline">病態科学系歯学・歯科放射線学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%3A%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%5D%E5%B0%8F%E5%8C%BA%E5%88%8657030%3A%E4%BF%9D%E5%AD%98%E6%B2%BB%E7%99%82%E7%B3%BB%E6%AD%AF%E5%AD%A6%E9%96%A2%E9%80%A3" class="link-page underline">小区分57030:保存治療系歯学関連</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%3A%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%5D%E5%B0%8F%E5%8C%BA%E5%88%8657020%3A%E7%97%85%E6%85%8B%E7%B3%BB%E5%8F%A3%E8%85%94%E7%A7%91%E5%AD%A6%E9%96%A2%E9%80%A3" class="link-page underline">小区分57020:病態系口腔科学関連</a>
+                          </td>
+                        </tr>
+
+
+                        <tr>
+                          <th>キーワード</th>
+                          <td><a href="/search/?qf=%E8%82%BA%E7%82%8E%E7%90%83%E8%8F%8C" class="link-page underline">肺炎球菌</a>&nbsp;/&nbsp;<a href="/search/?qf=%E8%AA%A4%E5%9A%A5%E6%80%A7%E8%82%BA%E7%82%8E" class="link-page underline">誤嚥性肺炎</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%83%AC%E3%83%B3%E3%82%B5%E7%90%83%E8%8F%8C" class="link-page underline">レンサ球菌</a>&nbsp;/&nbsp;<a href="/search/?qf=%E6%AD%AF%E5%91%A8%E7%82%8E" class="link-page underline">歯周炎</a>&nbsp;/&nbsp;<a href="/search/?qf=%E8%82%BA%E7%82%8E" class="link-page underline">肺炎</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%A5%BD%E4%B8%AD%E7%90%83" class="link-page underline">好中球</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%85%8D%E7%96%AB%E5%9B%9E%E9%81%BF" class="link-page underline">免疫回避</a>&nbsp;/&nbsp;<a href="/search/?qf=%E7%B4%B0%E8%8F%8C" class="link-page underline">細菌</a>&nbsp;/&nbsp;<a href="/search/?qf=%E6%AD%AF%E5%91%A8%E7%97%85" class="link-page underline">歯周病</a>&nbsp;/&nbsp;<a href="/search/?qf=%E3%83%97%E3%83%AD%E3%83%86%E3%82%A2%E3%83%BC%E3%82%BC" class="link-page underline">プロテアーゼ</a></td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究課題数</th>
+                          <td>44</td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究成果数</th>
+                          <td>1,237</td>
+                        </tr>
+
+                      </table>
+                    </div><!-- .listitem xfolkentry -->
+                  </li>
+
+
+                  <li>
+                    <div class="listitem xfolkentry">
+                      <h3 class="item_mainTitle">
+                        <div class="title">
+                        <input type="checkbox" class="chk_group" name="chk[]" id="chk_90371476" value="90371476" />
+                        <span class="row-number"> 19. </span><i class="fa fa-user"></i> <a class="link-page" href="/nrid/1000090371476/">森 信人<span class="subTitle">&nbsp;&nbsp;Mori Nobuhito&nbsp;&nbsp;(90371476)</span></a>
+                          </div>
+                      </h3>
+
+                      <table class="summary-table">
+
+                      <tr>
+                       <th>所属 (現在)</th>
+                       <td>
+
+                       京都大学,&nbsp;防災研究所,&nbsp;教授
+
+                       </td>
+                      </tr>
+
+
+                        <tr>
+                          <th>審査区分/研究分野</th>
+                          <td>
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%90%86%E5%B7%A5%E7%B3%BB/%E5%B7%A5%E5%AD%A6/%E5%9C%9F%E6%9C%A8%E5%B7%A5%E5%AD%A6/%E6%B0%B4%E5%B7%A5%E5%AD%A6" class="link-page underline">水工学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%3A%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%5D%E4%B8%AD%E5%8C%BA%E5%88%8622%3A%E5%9C%9F%E6%9C%A8%E5%B7%A5%E5%AD%A6%E3%81%8A%E3%82%88%E3%81%B3%E3%81%9D%E3%81%AE%E9%96%A2%E9%80%A3%E5%88%86%E9%87%8E" class="link-page underline">中区分22:土木工学およびその関連分野</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%90%86%E5%B7%A5%E7%B3%BB/%E5%B7%A5%E5%AD%A6/%E5%9C%9F%E6%9C%A8%E5%B7%A5%E5%AD%A6/%E6%B0%B4%E5%B7%A5%E6%B0%B4%E7%90%86%E5%AD%A6" class="link-page underline">水工水理学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%B7%8F%E5%90%88%E3%83%BB%E6%96%B0%E9%A0%98%E5%9F%9F%E7%B3%BB/%E8%A4%87%E5%90%88%E6%96%B0%E9%A0%98%E5%9F%9F/%E7%A4%BE%E4%BC%9A%E3%83%BB%E5%AE%89%E5%85%A8%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E7%A7%91%E5%AD%A6/%E8%87%AA%E7%84%B6%E7%81%BD%E5%AE%B3%E7%A7%91%E5%AD%A6" class="link-page underline">自然災害科学</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%3A%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%5D%E5%B0%8F%E5%8C%BA%E5%88%8622040%3A%E6%B0%B4%E5%B7%A5%E5%AD%A6%E9%96%A2%E9%80%A3" class="link-page underline">小区分22040:水工学関連</a>
+                          </td>
+                        </tr>
+
+
+                        <tr>
+                          <th>キーワード</th>
+                          <td><a href="/search/?qf=%E6%B3%A2%E6%B5%AA" class="link-page underline">波浪</a>&nbsp;/&nbsp;<a href="/search/?qf=%E6%B2%BF%E5%B2%B8%E7%81%BD%E5%AE%B3" class="link-page underline">沿岸災害</a>&nbsp;/&nbsp;<a href="/search/?qf=%E9%AB%98%E6%BD%AE" class="link-page underline">高潮</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%8F%B0%E9%A2%A8" class="link-page underline">台風</a>&nbsp;/&nbsp;<a href="/search/?qf=%E6%B4%A5%E6%B3%A2" class="link-page underline">津波</a>&nbsp;/&nbsp;<a href="/search/?qf=%E6%B0%97%E5%80%99%E5%A4%89%E5%8B%95" class="link-page underline">気候変動</a>&nbsp;/&nbsp;<a href="/search/?qf=%E6%B5%B7%E5%B2%B8%E5%B7%A5%E5%AD%A6" class="link-page underline">海岸工学</a>&nbsp;/&nbsp;<a href="/search/?qf=%E6%B0%B4%E5%B7%A5%E6%B0%B4%E7%90%86%E5%AD%A6" class="link-page underline">水工水理学</a>&nbsp;/&nbsp;<a href="/search/?qf=%E8%87%AA%E7%84%B6%E7%8F%BE%E8%B1%A1%E8%A6%B3%E6%B8%AC%E3%83%BB%E4%BA%88%E6%B8%AC" class="link-page underline">自然現象観測・予測</a>&nbsp;/&nbsp;<a href="/search/?qf=%E6%B5%B7%E6%B4%8B%E5%B7%A5%E5%AD%A6" class="link-page underline">海洋工学</a></td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究課題数</th>
+                          <td>44</td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究成果数</th>
+                          <td>452</td>
+                        </tr>
+
+                      </table>
+                    </div><!-- .listitem xfolkentry -->
+                  </li>
+
+
+                  <li>
+                    <div class="listitem xfolkentry">
+                      <h3 class="item_mainTitle">
+                        <div class="title">
+                        <input type="checkbox" class="chk_group" name="chk[]" id="chk_20302656" value="20302656" />
+                        <span class="row-number"> 20. </span><i class="fa fa-user"></i> <a class="link-page" href="/nrid/1000020302656/">井上 聡<span class="subTitle">&nbsp;&nbsp;Inoue Satoshi&nbsp;&nbsp;(20302656)</span></a>
+                          </div>
+                      </h3>
+
+                      <table class="summary-table">
+
+                      <tr>
+                       <th>所属 (現在)</th>
+                       <td>
+
+                       東京大学,&nbsp;史料編纂所,&nbsp;准教授
+
+                       </td>
+                      </tr>
+
+
+                        <tr>
+                          <th>審査区分/研究分野</th>
+                          <td>
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E4%BA%BA%E6%96%87%E7%A4%BE%E4%BC%9A%E7%B3%BB/%E4%BA%BA%E6%96%87%E5%AD%A6/%E5%8F%B2%E5%AD%A6/%E6%97%A5%E6%9C%AC%E5%8F%B2" class="link-page underline">日本史</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%3A%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%5D%E4%B8%AD%E5%8C%BA%E5%88%863%3A%E6%AD%B4%E5%8F%B2%E5%AD%A6%E3%80%81%E8%80%83%E5%8F%A4%E5%AD%A6%E3%80%81%E5%8D%9A%E7%89%A9%E9%A4%A8%E5%AD%A6%E3%81%8A%E3%82%88%E3%81%B3%E3%81%9D%E3%81%AE%E9%96%A2%E9%80%A3%E5%88%86%E9%87%8E" class="link-page underline">中区分3:歴史学、考古学、博物館学およびその関連分野</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E4%BA%BA%E6%96%87%E7%A4%BE%E4%BC%9A%E7%B3%BB/%E4%BA%BA%E6%96%87%E5%AD%A6/%E5%8F%B2%E5%AD%A6/%E5%8F%B2%E5%AD%A6%E4%B8%80%E8%88%AC" class="link-page underline">史学一般</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%3A%E5%AF%A9%E6%9F%BB%E5%8C%BA%E5%88%86%5D%E5%B0%8F%E5%8C%BA%E5%88%8603020%3A%E6%97%A5%E6%9C%AC%E5%8F%B2%E9%96%A2%E9%80%A3" class="link-page underline">小区分03020:日本史関連</a>&nbsp;/
+
+                          <a href="/search/?qd=%5B%E7%A0%94%E7%A9%B6%E5%88%86%E9%87%8E%3A%E7%B4%B0%E7%9B%AE%5D%E7%B7%8F%E5%90%88%E3%83%BB%E6%96%B0%E9%A0%98%E5%9F%9F%E7%B3%BB/%E7%B7%8F%E5%90%88%E9%A0%98%E5%9F%9F/%E6%83%85%E5%A0%B1%E5%AD%A6/%E5%9B%B3%E6%9B%B8%E9%A4%A8%E6%83%85%E5%A0%B1%E5%AD%A6%E3%83%BB%E4%BA%BA%E6%96%87%E7%A4%BE%E4%BC%9A%E6%83%85%E5%A0%B1%E5%AD%A6" class="link-page underline">図書館情報学・人文社会情報学</a>
+                          </td>
+                        </tr>
+
+
+                        <tr>
+                          <th>キーワード</th>
+                          <td><a href="/search/?qf=%E6%97%A5%E6%9C%AC%E5%8F%B2" class="link-page underline">日本史</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%8F%B2%E6%96%99%E5%AD%A6" class="link-page underline">史料学</a>&nbsp;/&nbsp;<a href="/search/?qf=%E7%B5%B5%E5%9B%B3" class="link-page underline">絵図</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%8F%A4%E8%A8%98%E9%8C%B2" class="link-page underline">古記録</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%8F%B2%E6%96%99%E7%A0%94%E7%A9%B6" class="link-page underline">史料研究</a>&nbsp;/&nbsp;<a href="/search/?qf=%E6%9C%A8%E7%B0%A1" class="link-page underline">木簡</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%9C%B0%E5%9B%B3" class="link-page underline">地図</a>&nbsp;/&nbsp;<a href="/search/?qf=%E8%8D%98%E5%9C%92%E7%B5%B5%E5%9B%B3" class="link-page underline">荘園絵図</a>&nbsp;/&nbsp;<a href="/search/?qf=%E5%8F%A4%E6%96%87%E6%9B%B8" class="link-page underline">古文書</a>&nbsp;/&nbsp;<a href="/search/?qf=%E8%8D%98%E5%9C%92" class="link-page underline">荘園</a></td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究課題数</th>
+                          <td>44</td>
+                        </tr>
+
+
+                        <tr>
+                          <th>研究成果数</th>
+                          <td>305</td>
+                        </tr>
+
+                      </table>
+                    </div><!-- .listitem xfolkentry -->
+                  </li>
+
+                </ul>
+              </div><!-- .listContainer -->
+
+
+              <div class="paging paging-top">
+                 <ul class="paginglist">
+
+
+
+                  <li class="pagingitem hidden-xs"><span class="btn pagingbtn currentpage">1</span></li>
+
+
+
+
+
+                  <li class="pagingitem hidden-xs"><a class="btn pagingbtn" id="pagingbtn_bottomnum_21"><span class="short_normal">2</span></a></li>
+
+
+
+
+
+                  <li class="pagingitem hidden-xs"><a class="btn pagingbtn" id="pagingbtn_bottomnum_41"><span class="short_normal">3</span></a></li>
+
+
+
+
+
+                  <li class="pagingitem hidden-xs"><a class="btn pagingbtn" id="pagingbtn_bottomnum_61"><span class="short_normal">4</span></a></li>
+
+
+
+
+
+                  <li class="pagingitem hidden-xs"><a class="btn pagingbtn" id="pagingbtn_bottomnum_81"><span class="short_normal">5</span></a></li>
+
+
+
+
+
+                  <li class="pagingitem hidden-xs"><a class="btn pagingbtn" id="pagingbtn_bottomnum_101"><span class="short_normal">6</span></a></li>
+
+
+
+
+
+                  <li class="pagingitem hidden-xs"><a class="btn pagingbtn" id="pagingbtn_bottomnum_121"><span class="short_normal">7</span></a></li>
+
+
+
+
+
+                  <li class="pagingitem hidden-xs"><a class="btn pagingbtn" id="pagingbtn_bottomnum_141"><span class="short_normal">8</span></a></li>
+
+
+
+
+
+                  <li class="pagingitem hidden-xs"><a class="btn pagingbtn" id="pagingbtn_bottomnum_161"><span class="short_normal">9</span></a></li>
+
+
+
+
+
+                  <li class="pagingitem hidden-xs"><a class="btn pagingbtn" id="pagingbtn_bottomnum_181"><span class="short_normal">10</span></a></li>
+
+
+
+
+                  <li class="pagingitem hidden-xs">
+                    <a class="btn pagingbtn" id="pagingbtn_bottomal_21"><span aria-hidden="true">
+
+                    &rsaquo;</span><span class="sr-only">Next
+
+                    </span></a>
+                  </li>
+
+
+
+                  <li class="pagingitem hidden-xs">
+                    <a class="btn pagingbtn" id="pagingbtn_bottomal_981"><span aria-hidden="true">
+
+                    &raquo;</span><span class="sr-only">End
+
+                    </span></a>
+                  </li>
+
+
+                </ul>
+              </div><!-- .paging paging-top -->
+
+            </div><!-- .listings -->
+          </div><!-- #result-list -->
+      </div><!-- .container -->
+    </div><!-- #result-wrapper -->
+  </div><!-- #results -->
+
+
+
+</div><!-- .body-wrap -->
+<input type="hidden" name="st" value="1" />
+<input type="hidden" name="rw" value="20" />
+
+
+ </form>
+</div><!-- #content -->
+
+
+<div class="footer">
+  <div class="footer-wrap">
+      <div class="row">
+          <div class="col-sm-8 col-xs-12">
+              <p class="footer-links">
+
+                  <a href="https://support.nii.ac.jp/kaken/" class="win_open  active">サービス概要</a>
+
+                  <a href="https://support.nii.ac.jp/kaken/researcher_quicksearch" class="win_open ">検索マニュアル</a>
+
+                  <a href="https://support.nii.ac.jp/kaken/faq/general" class="win_open ">よくある質問</a>
+
+                  <a href="https://support.nii.ac.jp/news/kaken" class="win_open ">お知らせ</a>
+
+                  <a href="https://support.nii.ac.jp/kaken/about/terms" class="win_open ">利用規程</a>
+
+                  <a href="https://support.nii.ac.jp/kaken/kakenhi" class="win_open ">科研費による研究の帰属</a>
+
+              </p>
+          </div>
+          <div class="col-sm-4 col-xs-12">
+             <a class="pull-right" href="https://www.nii.ac.jp/" target="_blank"><strong>Powered by NII</strong></a>
+             <a class="pull-right kakenhi-footer-logo" href="https://www.jsps.go.jp/" target="_blank"><img src="/static/images/kaken_footer_logo_ja.png" alt="kakenhi" width="100" height="43" class="kakenhi logo" /></a>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js?1697515897"></script>
+<script type="text/javascript" src="/static/js/jquery.flot.js?1691548633"></script>
+<script type="text/javascript" src="/static/js/dropzone.js?1691548633"></script>
+
+<script nonce="UmqelrVo1EH9Wpt8lOoHoA==" type="text/javascript">
+//<![CDATA[
+$(function() {
+    $(".checkAll").on("change", function() {
+        $("." + this.id).prop("checked", this.checked);
+        if ($(".chk_group:checked").length == 0) {
+        	$("#file_btn").addClass("invisible");
+        } else {
+        	$("#file_btn").removeClass("invisible");
+        }
+    });
+
+    $(".chk_group").on("change", function() {
+		if ($(".chk_group:checked").length == 0) {
+        	$("#file_btn").addClass("invisible");
+        } else {
+        	$("#file_btn").removeClass("invisible");
+        }
+    });
+
+    if ($("select[name=ct]").val() == 'all') {
+		$(".chk_group").prop('checked', false);
+		$(".checkAll").prop('checked', false);
+		$(".chk_group").prop("disabled", true);
+		$(".checkAll").prop("disabled", true);
+		$("#file_btn").removeClass("invisible");
+    }
+
+    $("#ct").on("change", function() {
+    	if ($("select[name=ct]").val() == 'all') {
+    		$(".chk_group").prop('checked', false);
+    		$(".checkAll").prop('checked', false);
+    		$(".chk_group").prop("disabled", true);
+    		$(".checkAll").prop("disabled", true);
+    		$("#file_btn").removeClass("invisible");
+	    } else {
+	        $(".chk_group").prop("disabled", false);
+	        $(".checkAll").prop("disabled", false);
+	        if ($(".chk_group:checked").length == 0) {
+	        	$("#file_btn").addClass("invisible");
+	        }
+	    }
+    });
+});
+//]]>
+</script>
+
+</body>
+</html>
