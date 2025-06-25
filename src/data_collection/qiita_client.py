@@ -75,7 +75,7 @@ class QiitaClient:
             logger.error(f"Qiita APIリクエスト中にエラーが発生: {e}", exc_info=True)
             return None
 
-    def search_items(self, keyword: str, max_results: int = 10) -> List[Dict[str, Any]]:
+    def search_items(self, keyword: str, max_results: int = 100) -> List[Dict[str, Any]]:
         """
         キーワードで記事を検索します
 

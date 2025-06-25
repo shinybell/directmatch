@@ -12,6 +12,7 @@ ipadic>=1.0.0
 streamlit>=1.25.0
 requests>=2.30.0
 python-dotenv>=1.0.0
+beautifulsoup4>=4.10.0
 
 # データベースとORM
 sqlalchemy>=2.0.0

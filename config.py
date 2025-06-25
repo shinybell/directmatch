@@ -29,7 +29,7 @@ OPENALEX_API_BASE_URL = "https://api.openalex.org"
 OPENALEX_EMAIL = os.getenv("OPENALEX_EMAIL")  # APIのポリシーに従ってユーザー識別用
 
 # KAKEN API設定
-KAKEN_API_BASE_URL = "https://api.kaken.nii.ac.jp/opensearch"
+KAKEN_API_BASE_URL = "https://nrid.nii.ac.jp/opensearch/"
 
 # アプリケーション設定
 APP_TITLE = "エンジニア・研究者ダイレクトリクルーティングMVP"

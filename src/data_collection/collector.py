@@ -29,14 +29,14 @@ class DataCollector:
         self.openalex_client = OpenAlexClient()
         self.kaken_client = KakenClient()
 
-    def collect_from_github(self, keyword: str, max_results: int = 10, db_session: Session = None) -> List[Dict[str, Any]]:
+    def collect_from_github(self, keyword: str, max_results: int = 10, db_session: Optional[Session] = None) -> List[Dict[str, Any]]:
         """
         GitHubからデータを収集し、データベースに保存
 
         Args:
             keyword: 検索キーワード
             max_results: 取得する最大結果数
-            db_session: データベースセッション
+            db_session: データベースセッション (オプション)
 
         Returns:
             収集された候補者データのリスト
@@ -76,14 +76,14 @@ class DataCollector:
             logger.error(f"GitHubからのデータ収集中にエラーが発生: {e}", exc_info=True)
             return collected_data
 
-    def collect_from_qiita(self, keyword: str, max_results: int = 10, db_session: Session = None) -> List[Dict[str, Any]]:
+    def collect_from_qiita(self, keyword: str, max_results: int = 10, db_session: Optional[Session] = None) -> List[Dict[str, Any]]:
         """
         Qiitaからデータを収集し、データベースに保存
 
         Args:
             keyword: 検索キーワード
             max_results: 取得する最大結果数
-            db_session: データベースセッション
+            db_session: データベースセッション (オプション)
 
         Returns:
             収集された候補者データのリスト
@@ -128,14 +128,14 @@ class DataCollector:
             logger.error(f"Qiitaからのデータ収集中にエラーが発生: {e}", exc_info=True)
             return collected_data
 
-    def collect_from_openalex(self, keyword: str, max_results: int = 10, db_session: Session = None) -> List[Dict[str, Any]]:
+    def collect_from_openalex(self, keyword: str, max_results: int = 10, db_session: Optional[Session] = None) -> List[Dict[str, Any]]:
         """
         OpenAlexからデータを収集し、データベースに保存
 
         Args:
             keyword: 検索キーワード
             max_results: 取得する最大結果数
-            db_session: データベースセッション
+            db_session: データベースセッション (オプション)
 
         Returns:
             収集された候補者データのリスト
@@ -173,14 +173,14 @@ class DataCollector:
             logger.error(f"OpenAlexからのデータ収集中にエラーが発生: {e}", exc_info=True)
             return collected_data
 
-    def collect_from_kaken(self, keyword: str, max_results: int = 10, db_session: Session = None) -> List[Dict[str, Any]]:
+    def collect_from_kaken(self, keyword: str, max_results: int = 10, db_session: Optional[Session] = None) -> List[Dict[str, Any]]:
         """
         KAKENからデータを収集し、データベースに保存
 
         Args:
             keyword: 検索キーワード
             max_results: 取得する最大結果数
-            db_session: データベースセッション
+            db_session: データベースセッション (オプション)
 
         Returns:
             収集された候補者データのリスト
@@ -193,23 +193,25 @@ class DataCollector:
             researchers = self.kaken_client.search_researchers(keyword, max_results)
 
             for researcher in researchers:
-                researcher_id = researcher.get("id")
+                researcher_id = researcher.get("researcher_id")
                 if not researcher_id:
                     continue
 
-                # 研究者詳細は検索結果に含まれているため再取得は不要
+                # 研究者詳細取得（検索結果に含まれる場合は不要）
                 researcher_details = researcher
-
-                # プロジェクト情報取得
-                projects = self.kaken_client.get_researcher_projects(researcher_id)
+                if not researcher_details:
+                    researcher_details = self.kaken_client.get_researcher_details(researcher_id)
+                    if not researcher_details:
+                        continue
 
                 # 候補者データに変換
-                person_data = self.kaken_client.extract_person_data(researcher_details, projects)
-                collected_data.append(person_data)
+                person_data = self.kaken_client.extract_person_data(researcher_details)
+                if person_data:
+                    collected_data.append(person_data)
 
-                # データベースに保存（セッションが提供されている場合）
-                if db_session:
-                    self._save_person_to_db(person_data, db_session)
+                    # データベースに保存（セッションが提供されている場合）
+                    if db_session:
+                        self._save_person_to_db(person_data, db_session)
 
             logger.info(f"KAKENから{len(collected_data)}人の候補者データを収集しました")
             return collected_data
@@ -225,10 +227,10 @@ class DataCollector:
 
         Args:
             person_data: 候補者データ
-            db_session: データベースセッション
+            db_session: SQLAlchemyデータベースセッション
 
         Returns:
-            保存された候補者のID（同一人物が特定された場合は既存のID）
+            保存された候補者のID（同一人物が特定された場合は既存のID）またはNone（エラー時）
         """
         try:
             # 同一人物特定のための識別子を準備
@@ -245,16 +247,18 @@ class DataCollector:
 
             if existing_person:
                 # 既存の候補者情報を更新
-                logger.info(f"同一人物が特定されました: {existing_person.id} ({existing_person.full_name})")
+                person_id = str(existing_person.id)  # 確実に文字列型に変換
+                logger.info(f"同一人物が特定されました: {person_id} ({existing_person.full_name})")
 
                 # experience_summaryを結合
-                if person_data.get("experience_summary") and existing_person.experience_summary:
-                    person_data["experience_summary"] = existing_person.experience_summary + "\n\n" + person_data["experience_summary"]
+                existing_summary = existing_person.experience_summary
+                if person_data.get("experience_summary") and existing_summary:
+                    person_data["experience_summary"] = str(existing_summary) + "\n\n" + person_data["experience_summary"]
 
                 # 各フラグの統合（どちらかがTrueならTrue）
-                if existing_person.is_engineer:
+                if bool(existing_person.is_engineer):  # 明示的にbool()に変換
                     person_data["is_engineer"] = True
-                if existing_person.is_researcher:
+                if bool(existing_person.is_researcher):  # 明示的にbool()に変換
                     person_data["is_researcher"] = True
 
                 # 生データの取り込み
@@ -263,66 +267,101 @@ class DataCollector:
                         setattr(existing_person, key, value)
 
                 # 更新
-                updated_person = update_person(db_session, existing_person.id, person_data)
+                updated_person = update_person(db_session, person_id, person_data)
                 return updated_person.id if updated_person else None
             else:
                 # 新規の候補者として登録
                 new_person = create_person(db_session, person_data)
                 logger.info(f"新規候補者を登録しました: {new_person.id} ({new_person.full_name})")
-                return new_person.id
+                return new_person.id if new_person else None
 
         except Exception as e:
             logger.error(f"候補者データ保存中にエラーが発生: {e}", exc_info=True)
             db_session.rollback()
             return None
 
-    def collect_data(self, keywords: List[str], sources: Dict[str, bool], max_results_per_source: int = 10,
-                     db_session: Session = None) -> int:
+    def collect_data(self, source_configs: Dict[str, Dict[str, Any]] = None,
+                     keywords: List[str] = None, sources: Dict[str, bool] = None,
+                     max_results_per_source: int = 10, db_session: Optional[Session] = None) -> int:
         """
         複数のデータソースから複数のキーワードでデータを収集
 
         Args:
-            keywords: 検索キーワードのリスト
-            sources: 使用するデータソースのフラグ辞書 {"github": True, "qiita": True, "openalex": True, "kaken": True}
-            max_results_per_source: 各ソース・各キーワードあたりの最大結果数
-            db_session: データベースセッション
+            source_configs: ソースごとの設定辞書
+                例: {
+                    "github": {"keywords": ["python", "machine learning"], "max_results": 20},
+                    "qiita": {"keywords": ["AI", "深層学習"], "max_results": 15},
+                    "openalex": {"keywords": ["natural language processing"], "max_results": 10},
+                    "kaken": {"keywords": ["人工知能"], "max_results": 5}
+                }
+            keywords: 検索キーワードのリスト（後方互換性のため）
+            sources: 使用するデータソースのフラグ辞書 {"github": True, "qiita": True, "openalex": True, "kaken": True}（後方互換性のため）
+            max_results_per_source: 各ソース・各キーワードあたりの最大結果数（後方互換性のため）
+            db_session: データベースセッション (オプション)
 
         Returns:
             収集された候補者の総数
         """
         total_collected = 0
 
-        for keyword in keywords:
-            # 各キーワードごとに各データソースから収集
-            if sources.get("github", False):
-                github_data = self.collect_from_github(keyword, max_results_per_source, db_session)
+        # 後方互換性のために従来のパラメータ形式をサポート
+        if source_configs is None:
+            source_configs = {}
+            if sources and keywords:
+                for source_name, enabled in sources.items():
+                    if enabled:
+                        source_configs[source_name] = {
+                            "keywords": keywords,
+                            "max_results": max_results_per_source
+                        }        # GitHub
+        if "github" in source_configs:
+            cfg = source_configs["github"]
+            for keyword in cfg.get("keywords", []):
+                github_data = self.collect_from_github(keyword, cfg.get("max_results", 10), db_session)
                 total_collected += len(github_data)
 
-            if sources.get("qiita", False):
-                qiita_data = self.collect_from_qiita(keyword, max_results_per_source, db_session)
+        # Qiita
+        if "qiita" in source_configs:
+            cfg = source_configs["qiita"]
+            for keyword in cfg.get("keywords", []):
+                qiita_data = self.collect_from_qiita(keyword, cfg.get("max_results", 10), db_session)
                 total_collected += len(qiita_data)
 
-            if sources.get("openalex", False):
-                openalex_data = self.collect_from_openalex(keyword, max_results_per_source, db_session)
+        # OpenAlex
+        if "openalex" in source_configs:
+            cfg = source_configs["openalex"]
+            for keyword in cfg.get("keywords", []):
+                openalex_data = self.collect_from_openalex(keyword, cfg.get("max_results", 10), db_session)
                 total_collected += len(openalex_data)
 
-            if sources.get("kaken", False):
-                kaken_data = self.collect_from_kaken(keyword, max_results_per_source, db_session)
+        # KAKEN
+        if "kaken" in source_configs:
+            cfg = source_configs["kaken"]
+            for keyword in cfg.get("keywords", []):
+                kaken_data = self.collect_from_kaken(keyword, cfg.get("max_results", 10), db_session)
                 total_collected += len(kaken_data)
 
         return total_collected
 
-    def collect_data_parallel(self, keywords: List[str], sources: Dict[str, bool], max_results_per_source: int = 10,
-                              db_session: Session = None) -> int:
+    def collect_data_parallel(self, source_configs: Optional[Dict[str, Dict[str, Any]]] = None,
+                              keywords: Optional[List[str]] = None, sources: Optional[Dict[str, bool]] = None,
+                              max_results_per_source: int = 10, db_session: Optional[Session] = None) -> int:
         """
         複数のデータソースから並行してデータを収集（実験的実装）
         注意: データベースへの書き込みが競合する可能性があるため、DBセッションの扱いに注意が必要
 
         Args:
-            keywords: 検索キーワードのリスト
-            sources: 使用するデータソースのフラグ辞書 {"github": True, "qiita": True, "openalex": True, "kaken": True}
-            max_results_per_source: 各ソース・各キーワードあたりの最大結果数
-            db_session: データベースセッション
+            source_configs: ソースごとの設定辞書
+                例: {
+                    "github": {"keywords": ["python", "machine learning"], "max_results": 20},
+                    "qiita": {"keywords": ["AI", "深層学習"], "max_results": 15},
+                    "openalex": {"keywords": ["natural language processing"], "max_results": 10},
+                    "kaken": {"keywords": ["人工知能"], "max_results": 5}
+                }
+            keywords: 検索キーワードのリスト（後方互換性のため）
+            sources: 使用するデータソースのフラグ辞書 {"github": True, "qiita": True, "openalex": True, "kaken": True}（後方互換性のため）
+            max_results_per_source: 各ソース・各キーワードあたりの最大結果数（後方互換性のため）
+            db_session: データベースセッション (オプション)
 
         Returns:
             収集された候補者の総数
@@ -330,19 +369,22 @@ class DataCollector:
         total_collected = 0
         tasks = []
 
+        # 後方互換性のために従来のパラメータ形式をサポート
+        if source_configs is None:
+            source_configs = {}
+            if sources and keywords:
+                for source_name, enabled in sources.items():
+                    if enabled:
+                        source_configs[source_name] = {
+                            "keywords": keywords,
+                            "max_results": max_results_per_source
+                        }
+
         # 収集タスクを準備
-        for keyword in keywords:
-            if sources.get("github", False):
-                tasks.append(("github", keyword, max_results_per_source))
-
-            if sources.get("qiita", False):
-                tasks.append(("qiita", keyword, max_results_per_source))
-
-            if sources.get("openalex", False):
-                tasks.append(("openalex", keyword, max_results_per_source))
-
-            if sources.get("kaken", False):
-                tasks.append(("kaken", keyword, max_results_per_source))
+        for source_name, cfg in source_configs.items():
+            for keyword in cfg.get("keywords", []):
+                max_results = cfg.get("max_results", 10)
+                tasks.append((source_name, keyword, max_results))
 
         # 並列実行（収集タスクが4つ以上ある場合のみ）
         if len(tasks) >= 4:
@@ -371,7 +413,7 @@ class DataCollector:
 
         else:
             # 少ない場合は順次実行
-            total_collected = self.collect_data(keywords, sources, max_results_per_source, db_session)
+            total_collected = self.collect_data(source_configs=source_configs, db_session=db_session)
 
         return total_collected
 

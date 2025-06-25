@@ -140,14 +140,23 @@ class RecruitmentService:
         finally:
             db.close()
 
-    def collect_data(self, keywords: List[str], sources: Dict[str, bool], max_results_per_source: int = 10) -> int:
+    def collect_data(self, source_configs: Optional[Dict[str, Dict[str, Any]]] = None,
+                     keywords: Optional[List[str]] = None, sources: Optional[Dict[str, bool]] = None,
+                     max_results_per_source: int = 10) -> int:
         """
         指定されたキーワードと情報源からデータを収集
 
         Args:
-            keywords: 検索キーワードのリスト
-            sources: 使用するデータソースのフラグ辞書 {"github": True, "qiita": True, "openalex": True, "kaken": True}
-            max_results_per_source: 各ソース・各キーワードあたりの最大結果数
+            source_configs: ソースごとの設定辞書
+                例: {
+                    "github": {"keywords": ["python", "machine learning"], "max_results": 20},
+                    "qiita": {"keywords": ["AI", "深層学習"], "max_results": 15},
+                    "openalex": {"keywords": ["natural language processing"], "max_results": 10},
+                    "kaken": {"keywords": ["人工知能"], "max_results": 5}
+                }
+            keywords: 検索キーワードのリスト（後方互換性のため）
+            sources: 使用するデータソースのフラグ辞書 {"github": True, "qiita": True, "openalex": True, "kaken": True}（後方互換性のため）
+            max_results_per_source: 各ソース・各キーワードあたりの最大結果数（後方互換性のため）
 
         Returns:
             収集された候補者の総数
@@ -155,6 +164,7 @@ class RecruitmentService:
         db = get_db()
         try:
             total_collected = self.collector.collect_data(
+                source_configs=source_configs,
                 keywords=keywords,
                 sources=sources,
                 max_results_per_source=max_results_per_source,
@@ -164,14 +174,23 @@ class RecruitmentService:
         finally:
             db.close()
 
-    def collect_data_parallel(self, keywords: List[str], sources: Dict[str, bool], max_results_per_source: int = 10) -> int:
+    def collect_data_parallel(self, source_configs: Optional[Dict[str, Dict[str, Any]]] = None,
+                            keywords: Optional[List[str]] = None, sources: Optional[Dict[str, bool]] = None,
+                            max_results_per_source: int = 10) -> int:
         """
         指定されたキーワードと情報源からデータを並列収集
 
         Args:
-            keywords: 検索キーワードのリスト
-            sources: 使用するデータソースのフラグ辞書 {"github": True, "qiita": True, "openalex": True, "kaken": True}
-            max_results_per_source: 各ソース・各キーワードあたりの最大結果数
+            source_configs: ソースごとの設定辞書
+                例: {
+                    "github": {"keywords": ["python", "machine learning"], "max_results": 20},
+                    "qiita": {"keywords": ["AI", "深層学習"], "max_results": 15},
+                    "openalex": {"keywords": ["natural language processing"], "max_results": 10},
+                    "kaken": {"keywords": ["人工知能"], "max_results": 5}
+                }
+            keywords: 検索キーワードのリスト（後方互換性のため）
+            sources: 使用するデータソースのフラグ辞書 {"github": True, "qiita": True, "openalex": True, "kaken": True}（後方互換性のため）
+            max_results_per_source: 各ソース・各キーワードあたりの最大結果数（後方互換性のため）
 
         Returns:
             収集された候補者の総数
@@ -179,6 +198,7 @@ class RecruitmentService:
         db = get_db()
         try:
             total_collected = self.collector.collect_data_parallel(
+                source_configs=source_configs,
                 keywords=keywords,
                 sources=sources,
                 max_results_per_source=max_results_per_source,
