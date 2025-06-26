@@ -55,10 +55,11 @@ def main():
         researcher_count = sum(1 for p in persons if p.is_researcher)
         engineer_count = sum(1 for p in persons if p.is_engineer)
 
-        # データソースごとの人数を集計
-        github_count = sum(1 for p in persons if p.github_username)
-        qiita_count = sum(1 for p in persons if p.qiita_id)
-        openalex_count = sum(1 for p in persons if p.orcid_id)  # OpenAlexとORCIDの関連付け
+        # データソースごとの人数を集計（data_sourcesカラム使用）
+        github_count = sum(1 for p in persons if p.data_sources and "github" in p.data_sources)
+        qiita_count = sum(1 for p in persons if p.data_sources and "qiita" in p.data_sources)
+        openalex_count = sum(1 for p in persons if p.data_sources and "openalex" in p.data_sources)
+        kaken_count = sum(1 for p in persons if p.data_sources and "kaken" in p.data_sources)
 
         # 最新の更新日時
         if persons:
@@ -79,7 +80,7 @@ def main():
 
         # データソース内訳
         st.caption("データソース内訳:")
-        st.write(f"GitHub: {github_count}人, Qiita: {qiita_count}人, OpenAlex: {openalex_count}人")
+        st.write(f"GitHub: {github_count}人, Qiita: {qiita_count}人, OpenAlex: {openalex_count}人, KAKEN: {kaken_count}人")
 
         st.divider()
 
@@ -230,6 +231,7 @@ def main():
                         "適合度": st.session_state.match_score.get(p.id, 0.0),
                         "研究者": "✓" if p.is_researcher else "",
                         "エンジニア": "✓" if p.is_engineer else "",
+                        "データソース": ", ".join(p.data_sources) if p.data_sources else "",
                         "GitHub": p.github_username or "",
                         "Qiita": "https://qiita.com/" + p.qiita_id  if p.qiita_id else "",
                         "ORCID": p.orcid_id or "",
@@ -266,6 +268,7 @@ def main():
                     "適合度": st.column_config.NumberColumn(format="%.2f", width="small"),
                     "研究者": st.column_config.Column(width="small"),
                     "エンジニア": st.column_config.Column(width="small"),
+                    "データソース": st.column_config.Column(width="medium"),
                     "GitHub": st.column_config.LinkColumn(width="small"),
                     "Qiita": st.column_config.LinkColumn(width="small"),
                     "ORCID": st.column_config.LinkColumn(width="small"),
@@ -321,6 +324,10 @@ def main():
                         with col1:
                             st.markdown(f"**氏名:** {person.full_name}")
                             st.markdown(f"**所属:** {person.current_affiliation or '不明'}")
+
+                            # データソース情報を表示
+                            sources_str = "、".join(person.data_sources) if person.data_sources else "不明"
+                            st.markdown(f"**データソース:** {sources_str}")
 
                             if person.email:
                                 st.markdown(f"**メール:** {person.email}")
@@ -603,7 +610,10 @@ def main():
         # selected_id = st.selectbox("詳細を表示する候補者を選択", options=df["ID"].tolist(), format_func=lambda x: df[df["ID"]==x]["氏名"].iloc[0])
         # セレクトボックスを使わず、クリックされた行のIDを使用
         # selected_person_rowは行番号なので、これを使ってIDを取得
-        selected_id = df.iloc[st.session_state.person_selection.selection.rows[0]]["ID"] if st.session_state.person_selection.selection.rows else None
+        if persons:
+            selected_id = df.iloc[st.session_state.person_selection.selection.rows[0]]["ID"] if st.session_state.person_selection.selection.rows else None
+        else:
+            selected_id = None
 
         if selected_id:
             person = service.get_person_by_id(selected_id)
@@ -613,6 +623,10 @@ def main():
                 with col1:
                     st.markdown(f"**氏名:** {person.full_name}")
                     st.markdown(f"**所属:** {person.current_affiliation or '不明'}")
+
+                    # データソース情報を表示
+                    sources_str = "、".join(person.data_sources) if person.data_sources else "不明"
+                    st.markdown(f"**データソース:** {sources_str}")
 
                     if person.email:
                         st.markdown(f"**メール:** {person.email}")

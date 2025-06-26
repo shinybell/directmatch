@@ -60,10 +60,14 @@ def init_db():
     try:
         # models.pyからのインポートは循環参照を避けるためにここで行う
         from src.database.models import Person
+        from src.database.migration import run_migrations
 
         # テーブル作成
         Base.metadata.create_all(bind=engine)
         logger.info("データベーステーブル作成完了")
+
+        # マイグレーション実行
+        run_migrations()
     except Exception as e:
         logger.error(f"データベース初期化中にエラーが発生: {e}", exc_info=True)
         raise

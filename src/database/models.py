@@ -39,6 +39,9 @@ class Person(Base):
     # 経験情報（主要なNLP処理対象）
     experience_summary = Column(String, nullable=True)
 
+    # データソース追跡
+    data_sources = Column(JSON, nullable=False, default=list)
+
     # 生データ（JSON形式）
     raw_github_data = Column(JSON, nullable=True)
     raw_qiita_data = Column(JSON, nullable=True)
@@ -70,6 +73,7 @@ class Person(Base):
             "is_researcher": self.is_researcher,
             "is_engineer": self.is_engineer,
             "experience_summary": self.experience_summary,
+            "data_sources": self.data_sources or [],
             "last_updated_at": self.last_updated_at.isoformat() if self.last_updated_at else None,
             "match_score": self.match_score
         }

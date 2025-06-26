@@ -63,6 +63,8 @@ class DataCollector:
 
                 # 候補者データに変換
                 person_data = self.github_client.extract_person_data(user_details, repos)
+                # データソースを明示的に設定
+                person_data["data_sources"] = ["github"]
                 collected_data.append(person_data)
 
                 # データベースに保存（セッションが提供されている場合）
@@ -115,6 +117,8 @@ class DataCollector:
 
                 # 候補者データに変換
                 person_data = self.qiita_client.extract_person_data(user_details, user_items)
+                # データソースを明示的に設定
+                person_data["data_sources"] = ["qiita"]
                 collected_data.append(person_data)
 
                 # データベースに保存（セッションが提供されている場合）
@@ -160,6 +164,8 @@ class DataCollector:
 
                 # 候補者データに変換
                 person_data = self.openalex_client.extract_person_data(author_details, works)
+                # データソースを明示的に設定
+                person_data["data_sources"] = ["openalex"]
                 collected_data.append(person_data)
 
                 # データベースに保存（セッションが提供されている場合）
@@ -207,6 +213,8 @@ class DataCollector:
                 # 候補者データに変換
                 person_data = self.kaken_client.extract_person_data(researcher_details)
                 if person_data:
+                    # データソースを明示的に設定
+                    person_data["data_sources"] = ["kaken"]
                     collected_data.append(person_data)
 
                     # データベースに保存（セッションが提供されている場合）
@@ -266,11 +274,25 @@ class DataCollector:
                     if key.startswith("raw_") and value is not None:
                         setattr(existing_person, key, value)
 
+                # データソースの統合
+                new_sources = person_data.get("data_sources", [])
+                if new_sources:
+                    existing_sources = existing_person.data_sources or []
+                    # 重複を避けて新しいソースを追加
+                    for source in new_sources:
+                        if source not in existing_sources:
+                            existing_sources.append(source)
+                    person_data["data_sources"] = existing_sources
+
                 # 更新
                 updated_person = update_person(db_session, person_id, person_data)
                 return updated_person.id if updated_person else None
             else:
                 # 新規の候補者として登録
+                # データソースの追跡情報が設定されていない場合は空リストを初期化
+                if "data_sources" not in person_data:
+                    person_data["data_sources"] = []
+
                 new_person = create_person(db_session, person_data)
                 logger.info(f"新規候補者を登録しました: {new_person.id} ({new_person.full_name})")
                 return new_person.id if new_person else None
@@ -279,6 +301,8 @@ class DataCollector:
             logger.error(f"候補者データ保存中にエラーが発生: {e}", exc_info=True)
             db_session.rollback()
             return None
+
+
 
     def collect_data(self, source_configs: Dict[str, Dict[str, Any]] = None,
                      keywords: List[str] = None, sources: Dict[str, bool] = None,
