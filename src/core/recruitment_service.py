@@ -207,3 +207,18 @@ class RecruitmentService:
             return total_collected
         finally:
             db.close()
+
+    def reset_database(self):
+        """
+        データベース内の人材リストをリセット（全データ削除）
+
+        Returns:
+            削除された候補者の数
+        """
+        from src.database.crud import delete_all_persons
+        db = get_db()
+        try:
+            deleted_count = delete_all_persons(db)
+            return deleted_count
+        finally:
+            db.close()

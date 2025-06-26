@@ -205,3 +205,18 @@ def update_match_scores(db: Session, score_dict: Dict[str, float]) -> int:
         db.rollback()
         logger.error(f"マッチスコア更新中にエラーが発生: {e}", exc_info=True)
         raise
+
+def delete_all_persons(session):
+    """
+    すべての候補者データを削除する
+
+    Args:
+        session: データベースセッション
+
+    Returns:
+        削除された候補者の数
+    """
+    from src.database.models import Person
+    deleted_count = session.query(Person).delete()
+    session.commit()
+    return deleted_count

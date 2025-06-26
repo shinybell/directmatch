@@ -7,6 +7,10 @@ import sys
 import os
 import time
 from datetime import datetime
+
+# ルートディレクトリをシステムパスに追加
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from src.utils.common import setup_logger
 import config
 
